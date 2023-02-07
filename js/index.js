@@ -1,6 +1,24 @@
+var searchQuery = location.search.replace(/^\?/, '').split('&')
+    .reduce((ac, cr)=>{
+        var t = cr.split('=');
+        var key = t[0];
+        var value = t[1] ||'';
+        ac[key] = value;
+        return ac;
+    }, {});
+
+function changeLocation(modifyData) {
+    Object.assign(searchQuery, modifyData)
+    var newUrl = [location.origin, location.pathname].join('/')+'?'
+        + Object.keys(searchQuery).map(key=> key+'='+ searchQuery[key]).join('&');
+    location.replace(newUrl);
+}
+
 var _ = absol._;
 var $ = absol.$;
+
 var requireAsync = absol.remoteNodeRequireAsync;
+
 window.render = function render(o) {
     return _(o).addTo(document.body);
 }
@@ -25,6 +43,7 @@ var type2icon = {
     group: 'span.mdi.mdi-.mdi-package-variant'
 }
 
+var activeExp = null;
 function makeTocTree(pElt, node) {
     var exp = _({
         tag: 'exptree',
@@ -37,11 +56,17 @@ function makeTocTree(pElt, node) {
                 window.dispatchEvent(new Event('resize'));
             },
             press: function (){
+                if (activeExp) {
+                    activeExp.active = false;
+                }
                 if (node.href){
                    fetch(node.href).then(res=> res.text()).then(text=>{
                       var html = converter.makeHtml(text);
                        contentElt.innerHTML = html;
                        hljs.highlightAll();
+                       activeExp = exp;
+                       activeExp.active = true;
+
                    }).catch(error=>{
                        contentElt = '<h3 color="red">Not found</h3>'
                    })
