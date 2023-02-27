@@ -6,6 +6,11 @@ toc = {
     type: 'package',
     children: [
         {
+            name:'Dom Syntax',
+            type: 'group',
+            href:__dir +'/absol/dom_syntax.md'
+        },
+        {
             name:'Alarm',
             type: 'class',
             href:__dir +'/absol/Alarm.md'
@@ -30,6 +35,11 @@ toc = {
     name: 'absol-acomp',
     type: 'package',
     children: [
+        {
+            name:'Component List',
+            type: 'group',
+            href:__dir +'/acomp/component_list.js'
+        },
         {
             name: 'Dom Component',
             type: 'group',
