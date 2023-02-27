@@ -114,11 +114,11 @@ function makeTocTree(pElt, node, path) {
 }
 
 tocList.forEach(it => makeTocTree(tocElt, it, [it.name || it.tagName]));
-
-tocElt.once('mousedown', function () {
-    var bound = tocElt.getBoundingClientRect();
-    tocElt.addStyle('width', bound.width + 'px')
-});
+//
+// tocElt.once('mousedown', function () {
+//     var bound = tocElt.getBoundingClientRect();
+//     tocElt.addStyle('width', bound.width + 'px')
+// });
 
 var contentElt = _('.main-content.markdown-body');
 
@@ -131,3 +131,4 @@ var mainElt = render({
     ]
 });
 
+mainElt.addStyle('--toc-width', tocElt.getBoundingClientRect().width+'px')
