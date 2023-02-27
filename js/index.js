@@ -10,11 +10,14 @@ var searchQuery = location.search.replace(/^\?/, '').split('&')
     }, {});
 
 
-function changeLocation(modifyData, name) {
+function changeLocation(modifyData, name, replace) {
     Object.assign(searchQuery, modifyData)
-    var newUrl =  location.pathname + '?'
+    var newUrl = location.pathname + '?'
         + Object.keys(searchQuery).map(key => key + '=' + searchQuery[key]).join('&');
-    window.history.pushState(modifyData, name | 'Document', newUrl);
+    if (replace)
+        window.history.replaceState(modifyData, name | 'Document', newUrl);
+    else
+        window.history.pushState(modifyData, name | 'Document', newUrl);
     // location.replace(newUrl);
 }
 
@@ -47,7 +50,7 @@ var activeExp = null;
 
 var stateCallbacks = {};
 
-window.addEventListener('popstate', function (event){
+window.addEventListener('popstate', function (event) {
     var state = event.state;
     if (state.page && stateCallbacks[state.page]) {
         stateCallbacks[state.page]();
@@ -59,14 +62,14 @@ function makeTocTree(pElt, node, path) {
     var id = path.join('_').replace(/[^a-zA-Z0-9_]/g, '')
     var name = node.name || node.tagName;
 
-    function select(pushState) {
+    function select(doState) {
         if (activeExp === exp) return;
         if (activeExp) {
             activeExp.active = false;
         }
         activeExp = exp;
         activeExp.active = true;
-        if (pushState)  changeLocation({ page: id }, name);
+        if (doState) changeLocation({ page: id }, name, doState === 'replace');
 
         absol.remoteNodeRequireAsync(node.href).then(text => {
             if (activeExp !== exp) return;
@@ -78,6 +81,7 @@ function makeTocTree(pElt, node, path) {
             contentElt = '<h3 color="red">Not found</h3>'
         })
     }
+
     stateCallbacks[id] = select;
 
     var exp = _({
@@ -111,7 +115,7 @@ function makeTocTree(pElt, node, path) {
         node.children.forEach(it => makeTocTree(exp, it, path));
 
     }
-    if (id === searchQuery.page) select();
+    if (id === searchQuery.page) select('replace');
 }
 
 tocList.forEach(it => makeTocTree(tocElt, it, [it.name || it.tagName]));
@@ -132,4 +136,4 @@ var mainElt = render({
     ]
 });
 
-mainElt.addStyle('--toc-width', tocElt.getBoundingClientRect().width+'px')
+mainElt.addStyle('--toc-width', tocElt.getBoundingClientRect().width + 'px')
