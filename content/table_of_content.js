@@ -24,6 +24,21 @@ toc = {
             name:'datetime',
             type: 'group',
             href:__dir +'/absol/datetime.md'
+        },
+        {
+            name:'number',
+            type: 'group',
+            href:__dir +'/absol/number.md'
+        },
+        {
+            name:'object',
+            type: 'group',
+            href:__dir +'/absol/object.md'
+        },
+        {
+            name:'sclang',
+            type: 'group',
+            href:__dir +'/absol/sclang.md'
         }
     ]
 };
@@ -64,6 +79,40 @@ toc = {
         }
     ]
 };
+
+tocList.push(toc);
+
+toc = {
+    name:'absol-brace',
+    type:'package',
+    children:[
+        {name:'Bản đơn giản', type:'group', href: [__dir, 'brace','simple.md'].join('/')}
+    ]
+}
+
+tocList.push(toc);
+
+toc = {
+    name:'absol-poser',
+    type:'package',
+    href: [__dir, 'poser','index.md'].join('/')
+}
+
+tocList.push(toc);
+
+toc = {
+    name:'absol-sheet',
+    type:'package',
+    href: [__dir, 'sheet','index.md'].join('/')
+}
+
+tocList.push(toc);
+
+toc = {
+    name:'keeview-notes',
+    type:'package',
+    href: [__dir, 'keeview','index.md'].join('/')
+}
 
 tocList.push(toc);
 
