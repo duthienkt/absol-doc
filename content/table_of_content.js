@@ -4,7 +4,7 @@ var toc;
 toc = {
     name:'LibraryMap',
     type:'package',
-    href: [__dir, 'absol','lib_map'].join('/')
+    href: [__dir, 'absol','lib_map.js'].join('/')
 }
 
 tocList.push(toc);
