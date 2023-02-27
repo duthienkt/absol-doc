@@ -49,7 +49,6 @@ var stateCallbacks = {};
 
 window.addEventListener('popstate', function (event){
     var state = event.state;
-    console.log(state, stateCallbacks, stateCallbacks[state.page])
     if (state.page && stateCallbacks[state.page]) {
         stateCallbacks[state.page]();
     }
