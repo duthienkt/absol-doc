@@ -1,17 +1,19 @@
 var searchQuery = location.search.replace(/^\?/, '').split('&')
-    .reduce((ac, cr)=>{
+    .reduce((ac, cr) => {
         var t = cr.split('=');
         var key = t[0];
-        var value = t[1] ||'';
+        var value = t[1] || '';
         ac[key] = value;
         return ac;
     }, {});
 
-function changeLocation(modifyData) {
+
+function changeLocation(modifyData, name) {
     Object.assign(searchQuery, modifyData)
-    var newUrl = [location.origin, location.pathname].join('/')+'?'
-        + Object.keys(searchQuery).map(key=> key+'='+ searchQuery[key]).join('&');
-    location.replace(newUrl);
+    var newUrl =  location.pathname + '?'
+        + Object.keys(searchQuery).map(key => key + '=' + searchQuery[key]).join('&');
+    window.history.pushState(modifyData, name | 'Document', newUrl);
+    // location.replace(newUrl);
 }
 
 var _ = absol._;
@@ -23,10 +25,8 @@ window.render = function render(o) {
     return _(o).addTo(document.body);
 }
 
-var  converter = new showdown.Converter();
 
-
-var tocList =    require('../content/table_of_content.js')
+var tocList = require('../content/table_of_content.js')
 
 var tocElt = _({
     tag: 'expgroup',
@@ -36,39 +36,65 @@ var tocElt = _({
 var type2icon = {
     package: 'span.mdi.mdi-package',
     default: 'span',
-    class:'soan.mdi.mdi-cube-scan',
+    class: 'soan.mdi.mdi-cube-scan',
     'dom-class': 'span.mdi.mdi-webpack',
     group: 'span.mdi.mdi-package-variant'
 }
 
 var activeExp = null;
-function makeTocTree(pElt, node) {
+
+var stateCallbacks = {};
+
+window.addEventListener('popstate', function (event){
+    var state = event.state;
+    console.log(state, stateCallbacks, stateCallbacks[state.page])
+    if (state.page && stateCallbacks[state.page]) {
+        stateCallbacks[state.page]();
+    }
+})
+
+function makeTocTree(pElt, node, path) {
+    path = path.concat([node.name || node.tagName]);
+    var id = path.join('_').replace(/[^a-zA-Z0-9_]/g, '')
+    var name = node.name || node.tagName;
+
+    function select(pushState) {
+        if (activeExp === exp) return;
+        if (activeExp) {
+            activeExp.active = false;
+        }
+        activeExp = exp;
+        activeExp.active = true;
+        if (pushState)  changeLocation({ page: id }, name);
+
+        absol.remoteNodeRequireAsync(node.href).then(text => {
+            if (activeExp !== exp) return;
+            var html = marked.parse(text);
+            contentElt.innerHTML = html;
+            hljs.highlightAll();
+
+        }).catch(error => {
+            contentElt = '<h3 color="red">Not found</h3>'
+        })
+    }
+    stateCallbacks[id] = select;
+
     var exp = _({
         tag: 'exptree',
         props: {
-            name: node.name || node.tagName,
+            name: name,
             icon: type2icon[node.type] || type2icon.default
         },
-        on:{
-            statuschange: function (){
+        on: {
+            statuschange: function () {
                 window.dispatchEvent(new Event('resize'));
             },
-            press: function (){
+            press: function () {
                 if (activeExp) {
                     activeExp.active = false;
                 }
-                if (node.href){
-                   fetch(node.href).then(res=> res.text()).then(text=>{
-                      var html = converter.makeHtml(text);
-                       contentElt.innerHTML = html;
-                       hljs.highlightAll();
-                       activeExp = exp;
-                       activeExp.active = true;
-
-                   }).catch(error=>{
-                       contentElt = '<h3 color="red">Not found</h3>'
-                   })
-
+                if (node.href) {
+                    select(true);
                 }
             }
         }
@@ -77,30 +103,31 @@ function makeTocTree(pElt, node) {
     pElt.addChild(exp);
     if (node.children && node.children.length > 0) {
         exp.status = 'open';
-        node.children.sort((a, b)=>{
-            if (a.name < b.name) return -1;
-            return 1;
-        })
-        node.children.forEach(it => makeTocTree(exp, it));
+        // node.children.sort((a, b)=>{
+        //     if (a.name < b.name) return -1;
+        //     return 1;
+        // })
+        node.children.forEach(it => makeTocTree(exp, it, path));
 
     }
+    if (id === searchQuery.page) select();
 }
 
-tocList.forEach(it => makeTocTree(tocElt, it));
+tocList.forEach(it => makeTocTree(tocElt, it, [it.name || it.tagName]));
 
 tocElt.once('mousedown', function () {
     var bound = tocElt.getBoundingClientRect();
     tocElt.addStyle('width', bound.width + 'px')
 });
 
-var contentElt = _('.main-content');
+var contentElt = _('.main-content.markdown-body');
 
 
 var mainElt = render({
     class: 'main',
     child: [
         { class: ['main-left', 'as-bscroller'], child: tocElt },
-        {class:  'main-right', child: contentElt }
+        { class: 'main-right', child: contentElt }
     ]
 });
 
