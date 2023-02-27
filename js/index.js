@@ -2,6 +2,8 @@ var searchQuery = location.search.replace(/^\?/, '').split('&')
     .reduce((ac, cr) => {
         var t = cr.split('=');
         var key = t[0];
+        key = key.trim();
+        if (!key) return ac;
         var value = t[1] || '';
         ac[key] = value;
         return ac;
