@@ -49,3 +49,11 @@ code{
 .main-left {
     --as-transparent-button-active-color: rgba(0, 100, 255, 0.3) ;
 }
+
+.as-lib-map-item {
+    cursor: pointer;
+}
+
+.as-lib-map-item:hover {
+    color: #48bc33;
+}

@@ -9,6 +9,8 @@ var searchQuery = location.search.replace(/^\?/, '').split('&')
         return ac;
     }, {});
 
+searchQuery.page=  searchQuery.page ||'LibraryMap_LibraryMap';
+
 
 function changeLocation(modifyData, name, replace) {
     Object.assign(searchQuery, modifyData)
@@ -122,7 +124,7 @@ function makeTocTree(pElt, node, path) {
     if (id === searchQuery.page) select('replace');
 }
 
-tocList.forEach(it => makeTocTree(tocElt, it, [it.name || it.tagName]));
+tocList.forEach(it => makeTocTree(tocElt, it, []));
 //
 // tocElt.once('mousedown', function () {
 //     var bound = tocElt.getBoundingClientRect();

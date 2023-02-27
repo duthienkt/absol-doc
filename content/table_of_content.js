@@ -2,6 +2,14 @@ var tocList = [];
 
 var toc;
 toc = {
+    name:'LibraryMap',
+    type:'package',
+    href: [__dir, 'absol','lib_map'].join('/')
+}
+
+tocList.push(toc);
+
+toc = {
     name: 'absol(core)',
     type: 'package',
     children: [
