@@ -59,7 +59,7 @@ window.addEventListener('popstate', function (event) {
 
 function makeTocTree(pElt, node, path) {
     path = path.concat([node.name || node.tagName]);
-    var id = path.join('_').replace(/[^a-zA-Z0-9_]/g, '')
+    var id = absol.string.nonAccentVietnamese(path.join('_')).replace(/[^a-zA-Z0-9_]/g, '')
     var name = node.name || node.tagName;
 
     function select(doState) {
@@ -69,6 +69,10 @@ function makeTocTree(pElt, node, path) {
         }
         activeExp = exp;
         activeExp.active = true;
+        setTimeout(function (){
+            absol.$.vScrollIntoView(activeExp);
+        },100);
+
         if (doState) changeLocation({ page: id }, name, doState === 'replace');
 
         absol.remoteNodeRequireAsync(node.href).then(text => {

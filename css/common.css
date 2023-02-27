@@ -32,8 +32,10 @@ html, body {
     right: 0;
     top: 0;
     height: 100%;
-    left: calc(var(--toc-width) + 1px);
+    left: calc(var(--toc-width) + 11px);
     overflow: auto;
+    padding-bottom: 10px;
+    box-sizing: border-box;
 }
 
 .main-content {
@@ -42,4 +44,8 @@ html, body {
 
 code{
     color: #1b6c73;
+}
+
+.main-left {
+    --as-transparent-button-active-color: rgba(0, 100, 255, 0.3) ;
 }
