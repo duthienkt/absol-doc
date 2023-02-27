@@ -26,10 +26,7 @@ window.render = function render(o) {
 var  converter = new showdown.Converter();
 
 
-var tocList =
-    [
-        require('https://raw.githubusercontent.com/duthienkt/absol-acomp/master/document/table_of_contents.js')
-    ];
+var tocList =    require('../content/table_of_content.js')
 
 var tocElt = _({
     tag: 'expgroup',
@@ -39,8 +36,9 @@ var tocElt = _({
 var type2icon = {
     package: 'span.mdi.mdi-package',
     default: 'span',
+    class:'soan.mdi.mdi-cube-scan',
     'dom-class': 'span.mdi.mdi-webpack',
-    group: 'span.mdi.mdi-.mdi-package-variant'
+    group: 'span.mdi.mdi-package-variant'
 }
 
 var activeExp = null;
