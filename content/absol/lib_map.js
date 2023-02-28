@@ -11,6 +11,10 @@ var dontRecursive = {
     allWordDict: true
 }
 
+var dontShow = {
+    formartDateString:true
+};
+
 function iconOf(obj) {
     var iconName = 'cube';
     var type = typeof obj;
@@ -39,6 +43,7 @@ function iconOf(obj) {
 }
 
 function makeRow(obj, name,  path) {
+    if (dontShow[name]) return;
     if (name.startsWith('_') && name.length > 1) return;
     var type = typeof obj;
     var level = path.length;
