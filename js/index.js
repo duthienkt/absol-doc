@@ -25,6 +25,7 @@ function changeLocation(modifyData, name, replace) {
 
 var _ = absol._;
 var $ = absol.$;
+var $$ = absol.$$;
 
 var requireAsync = absol.remoteNodeRequireAsync;
 
@@ -57,7 +58,36 @@ window.addEventListener('popstate', function (event) {
     if (state.page && stateCallbacks[state.page]) {
         stateCallbacks[state.page]();
     }
-})
+});
+
+
+function runDocumentScript(contentElt) {
+    var scripts = $$('script',contentElt );
+    scripts.forEach(scriptElt=>{
+       var scriptCode = scriptElt.innerHTML;
+       var ath = _('attachhook');
+        scriptElt.parentElement.replaceChild(ath, scriptElt);
+       function render(o) {
+           var res =  _(o);
+           ath.parentElement.insertBefore(res, ath);
+       }
+        ath.once('attached', function (){
+            try{
+                var f = new Function('_', '$', '$$', 'render', 'doc', scriptCode);
+                f.call(window,_, $, $$, render, contentElt);
+            }
+            catch (e) {
+                console.error(e);
+            }
+
+        });
+    });
+
+    $$('a', contentElt).forEach(function (elt){
+        var href = elt.attr('href');
+        if (href && href.match(/^http(s?):\/\//)) elt.attr('target', '_blank');
+    })
+}
 
 function makeTocTree(pElt, node, path) {
     path = path.concat([node.name || node.tagName]);
@@ -81,7 +111,12 @@ function makeTocTree(pElt, node, path) {
             if (activeExp !== exp) return;
             var html = marked.parse(text);
             contentElt.innerHTML = html;
+            runDocumentScript(contentElt);
             hljs.highlightAll();
+
+
+
+
 
         }).catch(error => {
             contentElt = '<h3 color="red">Not found</h3>'
