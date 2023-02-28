@@ -9,7 +9,7 @@ var searchQuery = location.search.replace(/^\?/, '').split('&')
         return ac;
     }, {});
 
-searchQuery.page=  searchQuery.page ||'LibraryMap_LibraryMap';
+searchQuery.page = searchQuery.page || 'LibraryMap_LibraryMap';
 
 
 function changeLocation(modifyData, name, replace) {
@@ -62,28 +62,29 @@ window.addEventListener('popstate', function (event) {
 
 
 function runDocumentScript(contentElt) {
-    var scripts = $$('script',contentElt );
-    scripts.forEach(scriptElt=>{
-       var scriptCode = scriptElt.innerHTML;
-       var ath = _('attachhook');
+    var scripts = $$('script', contentElt);
+    scripts.forEach(scriptElt => {
+        var scriptCode = scriptElt.innerHTML;
+        var ath = _('attachhook');
         scriptElt.parentElement.replaceChild(ath, scriptElt);
-       function render(o) {
-           var res =  _(o);
-           ath.parentElement.insertBefore(res, ath);
-       }
-        ath.once('attached', function (){
-            try{
+
+        function render(o) {
+            var res = _(o);
+            ath.parentElement.insertBefore(res, ath);
+        }
+
+        ath.once('attached', function () {
+            try {
                 var f = new Function('_', '$', '$$', 'render', 'doc', scriptCode);
-                f.call(window,_, $, $$, render, contentElt);
-            }
-            catch (e) {
+                f.call(window, _, $, $$, render, contentElt);
+            } catch (e) {
                 console.error(e);
             }
 
         });
     });
 
-    $$('a', contentElt).forEach(function (elt){
+    $$('a', contentElt).forEach(function (elt) {
         var href = elt.attr('href');
         if (href && href.match(/^http(s?):\/\//)) elt.attr('target', '_blank');
     })
@@ -101,9 +102,9 @@ function makeTocTree(pElt, node, path) {
         }
         activeExp = exp;
         activeExp.active = true;
-        setTimeout(function (){
+        setTimeout(function () {
             absol.$.vScrollIntoView(activeExp);
-        },100);
+        }, 100);
 
         if (doState) changeLocation({ page: id }, name, doState === 'replace');
 
@@ -113,9 +114,6 @@ function makeTocTree(pElt, node, path) {
             contentElt.innerHTML = html;
             runDocumentScript(contentElt);
             hljs.highlightAll();
-
-
-
 
 
         }).catch(error => {
@@ -178,3 +176,7 @@ var mainElt = render({
 });
 
 mainElt.addStyle('--toc-width', tocElt.getBoundingClientRect().width + 'px')
+
+
+/*********************************************************************************/
+
