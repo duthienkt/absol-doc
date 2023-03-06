@@ -12,7 +12,7 @@ var dontRecursive = {
 }
 
 var dontShow = {
-    formartDateString:true
+    formartDateString: true
 };
 
 function iconOf(obj) {
@@ -42,17 +42,17 @@ function iconOf(obj) {
     return `<span class="mdi mdi-${iconName}"></span>`;
 }
 
-function makeRow(obj, name,  path) {
+function makeRow(obj, name, path) {
     if (dontShow[name]) return;
     if (name.startsWith('_') && name.length > 1) return;
     var type = typeof obj;
     var level = path.length;
     path = path.concat([name]);
     var pathText = path.join('.');
-    var line = '<div onclick="copyLibMapItem(\''+pathText+'\');" class="as-lib-map-item" title="'+pathText+'"><span>' + '&nbsp'.repeat(level * 4) + '</span>';
-    line += iconOf(obj)+' ';
+    var line = '<div onclick="copyLibMapItem(\'' + pathText + '\');" class="as-lib-map-item" title="' + pathText + '"><span>' + '&nbsp'.repeat(level * 4) + '</span>';
+    line += iconOf(obj) + ' ';
     line += `<span>${name}</span>`;
-    line += '</div>'
+    line += '</div>';
     lines.push(line);
     if (dontRecursive[name]) return;
     if (obj instanceof Array) {
@@ -65,13 +65,13 @@ function makeRow(obj, name,  path) {
     }
 }
 
-makeRow(absol, 'absol',[] );
+makeRow(absol, 'absol', []);
 
 md += lines.join('\n');
 
 window.copyLibMapItem = window.copyLibMapItem || function (pathText) {
     absol.clipboard.copyText(pathText);
-    absol.require('snackbar').show('copy: '+ pathText);
+    absol.require('snackbar').show('copy: ' + pathText);
 
 }
 
