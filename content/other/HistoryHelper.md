@@ -18,3 +18,21 @@
 
 > bundle được truyền khi gọi `setNewLink` và `hook` sẽ được truyền cho callbackFunc mỗi lần gọi   
 
+### Mẫu
+
+```js
+var handle;
+handle = HistoryHelper.setNewLink('?count=' + count, function (bundle) {
+    absol.require('snackbar').show("Back of " + bundle.id);
+    render(`<div>Back form ${bundle.id} to ${HistoryHelper.current && HistoryHelper.current.bundle && HistoryHelper.current.bundle.id}</div>`);
+}, { id: count });
+
+//...
+var hookHandle = HistoryHelper.hook(function (bundle) {
+    render(`<div>Prevent back button, current: ${HistoryHelper.current && HistoryHelper.current.bundle && HistoryHelper.current.bundle.id}</div>`);
+}, { id:'LOCK' });
+
+//...
+HistoryHelper.deleteHandle(hookHandle);
+
+```
