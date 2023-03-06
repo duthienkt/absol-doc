@@ -124,4 +124,16 @@ toc = {
 
 tocList.push(toc);
 
+var toc;
+toc = {
+    name:'Other',
+    type:'package',
+    children:[
+        {name:'HistoryHelper', type:'group', href: [__dir, 'other','HistoryHelper.md'].join('/')}
+    ]
+}
+
+tocList.push(toc);
+
+
 module.exports = tocList;
