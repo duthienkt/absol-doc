@@ -195,14 +195,20 @@ Bảng sclang_node
 - **alternate?**: `Statement`
 
 
-### ForStatement `extends Statement`
+### ForCountStatement `extends Statement`
 
-- **type**: `"ForStatement"`
+- **type**: `"ForCountStatement"`
 - **for**: `Identifier` biến đếm
 - **from**: `Expression`
 - **to**: `Expression`
 - **body**:  `Statement`
 
+### ForOfStatement `extends Statement`
+
+- **type**: `"ForStatement"`
+- **for**: `Identifier` biến giá trị
+- **of**: `Expression` array
+- **body**:  `Statement`
 
 
 ### WhileStatement `extends Statement`
