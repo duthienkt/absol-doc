@@ -14,11 +14,13 @@
 
 ### TreeChartData 
 
-| Tên  | Kiểu dữ liệu | Chú thích                                             |
-|------|--------------|-------------------------------------------------------|
-| name | `string`       | Tên của node, tùy chọn                                |
-| text | `string`       | Text hiển thị, nếu không có thì dùng name để hiển thị |
-| item | `Array<TreeChartData>`  | Dữ liệu các node con, có thể null hoặc mảng rỗng      |
+| Tên  | Kiểu dữ liệu                              | Chú thích                                             |
+|------|-------------------------------------------|-------------------------------------------------------|
+| name | `string`                                  | Tên của node, tùy chọn                                |
+| text | `string`                                  | Text hiển thị, nếu không có thì dùng name để hiển thị |
+| item | `Array<TreeChartData>`                    | Dữ liệu các node con, có thể null hoặc mảng rỗng      |
+| fill | `string / Color`                          | Màu của node                                          |
+| icon | `AbsolConstructDescriptor` hoặc `Element` | icon                                                  |
 
 > Có thể dùng dữ liệu dạng {text, items...} tương tự SelectTreeMenu 
 
@@ -32,6 +34,8 @@ var data = {
         {text:'B'},
         {
             text:'C',
+            icon:'span.mdi.mdi-account',
+            fill: 'red',
             items:[
                 {text:'E'},
                 {text:'F'}
