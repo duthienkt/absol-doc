@@ -90,6 +90,31 @@ toc = {
 
 tocList.push(toc);
 
+
+
+toc = {
+    name:'LibraryMap',
+    type:'package',
+    href: [__dir, 'absol','lib_map.js'].join('/')
+}
+
+tocList.push(toc);
+
+toc = {
+    name: 'form',
+    type: 'package',
+    children: [
+        {
+            name:'FmFragment',
+            type: 'class',
+            href:__dir +'/form/FmFragment.md'
+        },
+    ]
+};
+
+tocList.push(toc);
+
+
 toc = {
     name:'absol-brace',
     type:'package',
