@@ -23,11 +23,28 @@ function changeLocation(modifyData, name, replace) {
     // location.replace(newUrl);
 }
 
-var _ = absol._;
-var $ = absol.$;
-var $$ = absol.$$;
+/***
+ * @global
+ */
+window._ = absol._;
+/***
+ * @global
+ */
+window.$ = absol.$;
+
+
+/***
+ * @global
+ */
+window.$$ = absol.$$;
+/***
+ * @global
+ */
+window._g = absol._svg;
 
 var requireAsync = absol.remoteNodeRequireAsync;
+window.requireAsync = absol.remoteNodeRequireAsync;
+
 
 window.render = function render(o) {
     return _(o).addTo(document.body);
@@ -75,8 +92,8 @@ function runDocumentScript(contentElt) {
 
         ath.once('attached', function () {
             try {
-                var f = new Function('_', '$', '$$', 'render', 'doc', scriptCode);
-                f.call(window, _, $, $$, render, contentElt);
+                var f = new Function('absol','_', '$', '$$', 'render', 'doc', scriptCode);
+                f.call(window, absol,_, $, $$, render, contentElt);
             } catch (e) {
                 console.error(e);
             }
