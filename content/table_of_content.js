@@ -128,6 +128,7 @@ tocList.push(toc);
 toc = {
     name:'absol-poser',
     type:'package',
+
     href: [__dir, 'poser','index.md'].join('/')
 }
 
@@ -136,7 +137,11 @@ tocList.push(toc);
 toc = {
     name:'absol-sheet',
     type:'package',
-    href: [__dir, 'sheet','index.md'].join('/')
+    children:[
+        {name:'Kiểu dữ liệu', type:'group', href: [__dir, 'sheet','index.md'].join('/')},
+        {name:'TableEditor', type:'group', href: [__dir, 'sheet','TableEditor.md'].join('/')}
+    ],
+
 }
 
 tocList.push(toc);

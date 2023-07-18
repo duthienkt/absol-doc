@@ -70,7 +70,7 @@ Ví dụ:
 
 | tên  | kiểu                | Bắt buộc | Chú thích                  |
 |------|---------------------|----------|----------------------------|
-| type | Date                | x        | "DateTime"                     |
+| type | Date                |    x     | "DateTime"                     |
 | min  | Date hoặc biểu thức |          | Giới hạn min cho DateInput |
 | max  | Date hoặc biểu thức |          | Giới hạn max cho DateInput |
 
