@@ -20,7 +20,7 @@ var input = absol._({
 
 - **value**: `Date` 
   - default: `null`
-- **format**: `string`
+- **format**: `string` - chi tiết: [format](?page=absolcore_datetime#format)
   - default: `"dd/MM/yyyy HH:mm"`
   - giá trị: `"d/MM/yyyy hh:mm a"`, `"dd/MM/yyyy hh:mm a"`, `"`, `"dd-MM-yyyy hh:mm a"`, `"dd.MM.yyyy hh:mm a"`, `"yyyy/MM/dd hh:mm a"`, `"yyyy-MM-dd hh:mm a"`
 - **notNull**: `boolean`

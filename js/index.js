@@ -72,6 +72,7 @@ var stateCallbacks = {};
 
 window.addEventListener('popstate', function (event) {
     var state = event.state;
+    if (!state) return;
     if (state.page && stateCallbacks[state.page]) {
         stateCallbacks[state.page]();
     }
@@ -92,8 +93,8 @@ function runDocumentScript(contentElt) {
 
         ath.once('attached', function () {
             try {
-                var f = new Function('absol','_', '$', '$$', 'render', 'doc', scriptCode);
-                f.call(window, absol,_, $, $$, render, contentElt);
+                var f = new Function('absol', '_', '$', '$$', 'render', 'doc', scriptCode);
+                f.call(window, absol, _, $, $$, render, contentElt);
             } catch (e) {
                 console.error(e);
             }
@@ -111,6 +112,7 @@ function makeTocTree(pElt, node, path) {
     path = path.concat([node.name || node.tagName]);
     var id = absol.string.nonAccentVietnamese(path.join('_')).replace(/[^a-zA-Z0-9_]/g, '')
     var name = node.name || node.tagName;
+    var hash = location.hash;
 
     function select(doState) {
         if (activeExp === exp) return;
@@ -121,6 +123,11 @@ function makeTocTree(pElt, node, path) {
         activeExp.active = true;
         setTimeout(function () {
             absol.$.vScrollIntoView(activeExp);
+            var focusElt = absol.$(hash, contentElt);
+            if (focusElt) {
+                absol.$.vScrollIntoView(focusElt);
+            }
+
         }, 100);
 
         if (doState) changeLocation({ page: id }, name, doState === 'replace');
@@ -131,11 +138,15 @@ function makeTocTree(pElt, node, path) {
             contentElt.innerHTML = html;
             runDocumentScript(contentElt);
             hljs.highlightAll();
-
-
+            setTimeout(function () {
+                var focusElt = absol.$(hash, contentElt);
+                if (focusElt) {
+                    absol.$.vScrollIntoView(focusElt);
+                }
+            }, 100);
         }).catch(error => {
             contentElt = '<h3 color="red">Not found</h3>'
-        })
+        });
     }
 
     stateCallbacks[id] = select;
