@@ -70,6 +70,7 @@ toc = {
                 var clazz = absol.AComp.core.creator[key];
                 var name = (clazz + '').match(/function\s+([a-zA-Z0-9_]+)/);
                 name = (name && name[1]) || key;
+                name = name.replace(/2$/, '');
                 var res = {
                     type: 'dom-class',
                     tagName: key,
