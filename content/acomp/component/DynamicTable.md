@@ -1,14 +1,37 @@
-# DynamicTable
+## DynamicTable
 
-## style
+### style
 
 Để hiển thị như inline-block: thêm class *'as-inline'*
 
-## Tìm giải pháp
+### sort
 
-Trường hợp rowspan khi dữ liệu thêm xoá dòng?
+**Nhiều key trong 1 cột**
 
-Có rowspan trong cột bị ẩn?
-
-Lazyload thì sao hiển thị với rowspan khi chưa đủ dòng, và cần tốc độ nhanh để tính lại rowspan
-Để xem có vẻ được nè
+```js
+adapter = {
+    data: {
+        head: {
+            rows: [
+                {
+                    cells: [
+                        { id: 'cb' },
+                        { child: absol._({ text: "STT" }), idx: 'cb_1' },
+                        {
+                            child: absol._({ text: "MSSV" }), id: 'cb_2',
+                            sortKey: ['class', 'score'],// hoặc "class;score" hoặc "class score", key không chứa dấu space
+                            sortMenu: {
+                                'class': ["Xếp lớp tăng dần", "Xếp lớp giảm dần"],
+                                'score': ["Xếp điểm tăng dần", "Xếp điểm giảm dần"]
+                            }
+                        },
+                        { child: { text: 'Tên' }, id: 'cb_3' },
+                        //...
+                    ]
+                }
+            ]
+        },
+        //...
+    }
+}
+```
