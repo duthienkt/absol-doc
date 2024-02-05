@@ -1,9 +1,14 @@
-
 ## SelectMenu
 
 ### [Demo](https://absol.cf/libs/absol-acomp/demo/selectmenu.html)
 
-### props 
+### prototype
+
+| Tên              | Tham số    | Trả về                                                                                            |
+|------------------|------------|---------------------------------------------------------------------------------------------------|
+| findItemsByValue | value: any | Nếu không  tồn tại, trả undefined, nếu có, trả array 1 phần tử, có thể nhiều phần tử nếu bị trùng |
+
+### props
 
 <script>
 var clazz = absol.require('selectmenu');
@@ -39,6 +44,4 @@ render({
 </script>
 
 ### Ví dụ
-
-abc
 
