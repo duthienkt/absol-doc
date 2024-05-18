@@ -61,3 +61,7 @@ var mTableScroller2 = _({
 
 > Kể từ phiên bản này trở đi, có thể sử dụng các đối tượng có tương tác như checkbox, button, radio... để trong phần cố định
 > **Không** được thay đổi trường `fixedCol` sau khi tạo
+
+### css 
+
+**--tvs-scroll-padding-bottom**: phần padding ở dưới khi cuộn
