@@ -63,6 +63,7 @@ var type2icon = {
     default: 'span',
     class: 'soan.mdi.mdi-cube-scan',
     'dom-class': 'span.mdi.mdi-webpack',
+    'svg-class': 'span.mdi.mdi-codepen',
     group: 'span.mdi.mdi-package-variant'
 }
 

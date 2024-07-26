@@ -97,7 +97,7 @@ toc = {
     type: 'package',
     children: [
         {
-            name: 'Component List',
+            name: 'Chart List',
             type: 'group',
             href: __dir + '/vchart/chart_list.js'
         },
@@ -106,9 +106,14 @@ toc = {
             type: 'group',
             children:[
                 {
-                    type:'class',
+                    type:'svg-class',
                     name: 'HorizontalRangeChart ',
                     href: __dir + '/vchart/charts/HorizontalRangeChart.md'
+                },
+                {
+                    type:'svg-class',
+                    name: 'HorizontalRankChart ',
+                    href: __dir + '/vchart/charts/HorizontalRankChart.md'
                 }
             ]
         }
