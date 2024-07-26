@@ -2,9 +2,9 @@ var tocList = [];
 
 var toc;
 toc = {
-    name:'LibraryMap',
-    type:'package',
-    href: [__dir, 'absol','lib_map.js'].join('/')
+    name: 'LibraryMap',
+    type: 'package',
+    href: [__dir, 'absol', 'lib_map.js'].join('/')
 }
 
 tocList.push(toc);
@@ -14,39 +14,39 @@ toc = {
     type: 'package',
     children: [
         {
-            name:'Dom Syntax',
+            name: 'Dom Syntax',
             type: 'group',
-            href:__dir +'/absol/dom_syntax.md'
+            href: __dir + '/absol/dom_syntax.md'
         },
         {
-            name:'Alarm',
+            name: 'Alarm',
             type: 'class',
-            href:__dir +'/absol/Alarm.md'
+            href: __dir + '/absol/Alarm.md'
         },
         {
-            name:'DynamicCSS',
+            name: 'DynamicCSS',
             type: 'class',
-            href:__dir +'/absol/DynamicCSS.md'
+            href: __dir + '/absol/DynamicCSS.md'
         },
         {
-            name:'datetime',
+            name: 'datetime',
             type: 'group',
-            href:__dir +'/absol/datetime.md'
+            href: __dir + '/absol/datetime.md'
         },
         {
-            name:'number',
+            name: 'number',
             type: 'group',
-            href:__dir +'/absol/number.md'
+            href: __dir + '/absol/number.md'
         },
         {
-            name:'object',
+            name: 'object',
             type: 'group',
-            href:__dir +'/absol/object.md'
+            href: __dir + '/absol/object.md'
         },
         {
-            name:'sclang',
+            name: 'sclang',
             type: 'group',
-            href:__dir +'/absol/sclang.md'
+            href: __dir + '/absol/sclang.md'
         }
     ]
 };
@@ -59,9 +59,9 @@ toc = {
     type: 'package',
     children: [
         {
-            name:'Component List',
+            name: 'Component List',
             type: 'group',
-            href:__dir +'/acomp/component_list.js'
+            href: __dir + '/acomp/component_list.js'
         },
         {
             name: 'Dom Component',
@@ -75,7 +75,7 @@ toc = {
                     type: 'dom-class',
                     tagName: key,
                     name: name,
-                    href: [__dir, 'acomp','component', name+'.md'].join('/')
+                    href: [__dir, 'acomp', 'component', name + '.md'].join('/')
                 };
 
                 return res;
@@ -92,11 +92,36 @@ toc = {
 tocList.push(toc);
 
 
+toc = {
+    name: 'absol-vchart',
+    type: 'package',
+    children: [
+        {
+            name: 'Component List',
+            type: 'group',
+            href: __dir + '/vchart/chart_list.js'
+        },
+        {
+            name: 'Svg Charts',
+            type: 'group',
+            children:[
+                {
+                    type:'class',
+                    name: 'HorizontalRangeChart ',
+                    href: __dir + '/vchart/charts/HorizontalRangeChart.md'
+                }
+            ]
+        }
+    ]
+}
+
+tocList.push(toc);
+
 
 toc = {
-    name:'LibraryMap',
-    type:'package',
-    href: [__dir, 'absol','lib_map.js'].join('/')
+    name: 'LibraryMap',
+    type: 'package',
+    href: [__dir, 'absol', 'lib_map.js'].join('/')
 }
 
 tocList.push(toc);
@@ -106,9 +131,9 @@ toc = {
     type: 'package',
     children: [
         {
-            name:'FmFragment',
+            name: 'FmFragment',
             type: 'class',
-            href:__dir +'/form/FmFragment.md'
+            href: __dir + '/form/FmFragment.md'
         },
     ]
 };
@@ -117,30 +142,30 @@ tocList.push(toc);
 
 
 toc = {
-    name:'absol-brace',
-    type:'package',
-    children:[
-        {name:'Bản đơn giản', type:'group', href: [__dir, 'brace','simple.md'].join('/')}
+    name: 'absol-brace',
+    type: 'package',
+    children: [
+        { name: 'Bản đơn giản', type: 'group', href: [__dir, 'brace', 'simple.md'].join('/') }
     ]
 }
 
 tocList.push(toc);
 
 toc = {
-    name:'absol-poser',
-    type:'package',
+    name: 'absol-poser',
+    type: 'package',
 
-    href: [__dir, 'poser','index.md'].join('/')
+    href: [__dir, 'poser', 'index.md'].join('/')
 }
 
 tocList.push(toc);
 
 toc = {
-    name:'absol-sheet',
-    type:'package',
-    children:[
-        {name:'Kiểu dữ liệu', type:'group', href: [__dir, 'sheet','index.md'].join('/')},
-        {name:'TableEditor', type:'group', href: [__dir, 'sheet','TableEditor.md'].join('/')}
+    name: 'absol-sheet',
+    type: 'package',
+    children: [
+        { name: 'Kiểu dữ liệu', type: 'group', href: [__dir, 'sheet', 'index.md'].join('/') },
+        { name: 'TableEditor', type: 'group', href: [__dir, 'sheet', 'TableEditor.md'].join('/') }
     ],
 
 }
@@ -148,19 +173,19 @@ toc = {
 tocList.push(toc);
 
 toc = {
-    name:'keeview-notes',
-    type:'package',
-    href: [__dir, 'keeview','index.md'].join('/')
+    name: 'keeview-notes',
+    type: 'package',
+    href: [__dir, 'keeview', 'index.md'].join('/')
 }
 
 tocList.push(toc);
 
 var toc;
 toc = {
-    name:'Other',
-    type:'package',
-    children:[
-        {name:'HistoryHelper', type:'group', href: [__dir, 'other','HistoryHelper.md'].join('/')}
+    name: 'Other',
+    type: 'package',
+    children: [
+        { name: 'HistoryHelper', type: 'group', href: [__dir, 'other', 'HistoryHelper.md'].join('/') }
     ]
 }
 
