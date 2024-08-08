@@ -1,8 +1,11 @@
 ## HorizontalRangeChart
 
+### [Demo](https://absol.cf/libs/absol-vchart/demo/horizontalrankchart.html)
+
 ### props
 * **resizable** : `bool` đồ thị có thể thay đổi kích thước khi click vào
 * **zeroOY** : `bool` giá trị thấp nhất sẽ tính cả 0
+* **title** : tiêu đề
 * **position** : `Array<{name: string, ranks: Array<number>}>`
 * **maxText** : `string` hiển thị ở ghi chú
 * **minText** : `string` hiển thị ở ghi chú

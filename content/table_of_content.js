@@ -107,6 +107,26 @@ toc = {
             children:[
                 {
                     type:'svg-class',
+                    name: 'AssessmentChart ',
+                    href: __dir + '/vchart/charts/AssessmentChart.md'
+                },
+                {
+                    type:'svg-class',
+                    name: 'BarStackChart ',
+                    href: __dir + '/vchart/charts/BarStackChart.md'
+                },
+                {
+                    type:'svg-class',
+                    name: 'FunnelChart ',
+                    href: __dir + '/vchart/charts/FunnelChart.md'
+                },
+                {
+                    type:'svg-class',
+                    name: 'DualChart',
+                    href: __dir + '/vchart/charts/DualChart.md'
+                },
+                {
+                    type:'svg-class',
                     name: 'HorizontalRangeChart ',
                     href: __dir + '/vchart/charts/HorizontalRangeChart.md'
                 },
