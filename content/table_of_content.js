@@ -127,6 +127,11 @@ toc = {
                 },
                 {
                     type:'svg-class',
+                    name: 'ColumnAreaChart',
+                    href: __dir + '/vchart/charts/ColumnAreaChart.md'
+                },
+                {
+                    type:'svg-class',
                     name: 'HorizontalRangeChart ',
                     href: __dir + '/vchart/charts/HorizontalRangeChart.md'
                 },
