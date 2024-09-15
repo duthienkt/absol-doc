@@ -29,18 +29,22 @@ var mNumberInput = absol._({
 
 ## props
 
-- **value:** `number` giá trị
+- **value:** `number` {setter, getter} giá trị, giá trị lấy ra có thể khác giá trị truyền vào phụ thuộc min, max, floatFixed, có thể lấy giá trị gốc ở trường `rawValue`
 - **step:** `number` bước nhảy mỗi khi nhấn nút
 - **min:** `number`
 - **max:** `number`
-- **floatFixed:** `number` số chữ số thập phân được làm tròn
+- **floatFixed:** `number` số chữ số thập phân được làm tròn, nếu là số âm, sẽ làm tròn đến hàng chục, trăm ...
 - **format:** `"vi-VN"`, `"en-US"` hoặc  `"none"`, mặc định sử dụng `systemconfig.numberFormatLocales`, nếu không có, mặc định `"vi-VN"`
+- **disabled:** `boolean` bị vô hiệu hóa
+- **readonly:** `boolean` chỉ đọc
+- **valueDraggable:** `boolean` cho phép kéo thả để thay đổi giá trị, mặc định là `false`
 
 ## event
 
 ### change
 
 Sự kiện khi người dùng nhấn nút mũi tên, hoặc input blur và có thay đổi giá trị
+> Lưu ý trường `rawValue` sẽ thay đổi sau event change, trước event change, `rawValue` vẫn giữ nguyên giá trị giống giá trị value truyền vào, sau event chagnge, rawValue = value
 
 ## class
 
