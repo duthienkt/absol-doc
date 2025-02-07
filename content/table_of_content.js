@@ -68,6 +68,9 @@ toc = {
             type: 'group',
             children: Object.keys(absol.AComp.core.creator).sort().map(key => {
                 var clazz = absol.AComp.core.creator[key];
+                if (!absol.Dom.ShareInstance.creator[key]) return null;
+                if (key.toLowerCase().endsWith('ico') || key.toLowerCase().endsWith('icon')) return null;
+                if (!clazz.render) return;
                 var name = (clazz + '').match(/function\s+([a-zA-Z0-9_]+)/);
                 name = (name && name[1]) || key;
                 name = name.replace(/2$/, '');
@@ -80,7 +83,7 @@ toc = {
 
                 return res;
 
-            })
+            }).filter(x => !!x)
         },
         {
             name: 'Utils',
@@ -104,39 +107,39 @@ toc = {
         {
             name: 'Svg Charts',
             type: 'group',
-            children:[
+            children: [
                 {
-                    type:'svg-class',
+                    type: 'svg-class',
                     name: 'AssessmentChart ',
                     href: __dir + '/vchart/charts/AssessmentChart.md'
                 },
                 {
-                    type:'svg-class',
+                    type: 'svg-class',
                     name: 'BarStackChart ',
                     href: __dir + '/vchart/charts/BarStackChart.md'
                 },
                 {
-                    type:'svg-class',
+                    type: 'svg-class',
                     name: 'FunnelChart ',
                     href: __dir + '/vchart/charts/FunnelChart.md'
                 },
                 {
-                    type:'svg-class',
+                    type: 'svg-class',
                     name: 'DualChart',
                     href: __dir + '/vchart/charts/DualChart.md'
                 },
                 {
-                    type:'svg-class',
+                    type: 'svg-class',
                     name: 'ColumnAreaChart',
                     href: __dir + '/vchart/charts/ColumnAreaChart.md'
                 },
                 {
-                    type:'svg-class',
+                    type: 'svg-class',
                     name: 'HorizontalRangeChart ',
                     href: __dir + '/vchart/charts/HorizontalRangeChart.md'
                 },
                 {
-                    type:'svg-class',
+                    type: 'svg-class',
                     name: 'HorizontalRankChart ',
                     href: __dir + '/vchart/charts/HorizontalRankChart.md'
                 }
