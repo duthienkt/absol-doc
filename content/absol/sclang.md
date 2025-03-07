@@ -1,3 +1,42 @@
+# function
+
+## absol.sclang.validateSCCode(sourceCode, opt ):SCCodeValidation
+
+- **sourceCode**: `string`
+- **opt**: `{variables:string[]}`
+
+```js
+var d = absol.sclang.validateSCCode(`
+    var name = nd.name;
+    var scope;
+    var a;
+    a = b;
+    var m = {a: a, b: b, d: d};
+    if (type === 'get_var') {
+    x = y;
+        scope = this.topScope.findScope(nd.object);
+        if (!scope) {
+            this.glolbalScope.declare(name, null, true);
+        }
+    }
+    z = Math.max(x,y, scope[a]);
+    return name;`,
+    {variables: ['Math', 'Date', 'x','this']});
+
+
+if (d.error) {
+    console.log(d.error);
+    var div = document.createElement('div');
+
+    setTimeout(() => {
+        document.body.appendChild(div);
+        div.innerHTML = d.error.htmlMessage;
+    }, 100)
+}
+
+```
+
+
 # Database
 
 Bảng sclang_namespace
