@@ -54,6 +54,20 @@ toc = {
 tocList.push(toc);
 
 
+var acompNames = Object.keys(absol.AComp.core.creator).sort().map(key => {
+    var clazz = absol.AComp.core.creator[key];
+    if (!absol.Dom.ShareInstance.creator[key]) return null;
+    if (key.toLowerCase().endsWith('ico') || key.toLowerCase().endsWith('icon')) return null;
+    if (!clazz.render) return;
+    var name = (clazz + '').match(/function\s+([a-zA-Z0-9_]+)/);
+    name = (name && name[1]) || key;
+    name = name.replace(/2$/, '');
+    return name;
+
+}).filter(x => !!x)
+
+acompNames.push('Text');
+
 toc = {
     name: 'absol-acomp',
     type: 'package',
@@ -66,19 +80,21 @@ toc = {
         {
             name: 'Dom Component',
             type: 'group',
-            children: Object.keys(absol.AComp.core.creator).sort().map(key => {
-                var clazz = absol.AComp.core.creator[key];
-                if (!absol.Dom.ShareInstance.creator[key]) return null;
-                if (key.toLowerCase().endsWith('ico') || key.toLowerCase().endsWith('icon')) return null;
-                if (!clazz.render) return;
-                var name = (clazz + '').match(/function\s+([a-zA-Z0-9_]+)/);
-                name = (name && name[1]) || key;
-                name = name.replace(/2$/, '');
+            children: acompNames.map(name => {
+                var href = [__dir, 'acomp', 'component', name + '.md'].join('/');
+                var key = name.toLowerCase();
                 var res = {
                     type: 'dom-class',
                     tagName: key,
                     name: name,
-                    href: [__dir, 'acomp', 'component', name + '.md'].join('/')
+                    href:href ,
+                    onDom: function (elt) {
+                        absol.FileSaver.fileExist(href).then(result => {
+                            if (!result) {
+                               elt.addStyle('display', 'none');
+                            }
+                        })
+                    }
                 };
 
                 return res;

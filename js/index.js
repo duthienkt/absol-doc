@@ -183,6 +183,7 @@ function makeTocTree(pElt, node, path) {
         node.children.forEach(it => makeTocTree(exp, it, path));
 
     }
+    if (node.onDom) node.onDom(exp);
     if (id === searchQuery.page) select('replace');
 }
 
