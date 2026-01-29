@@ -96,10 +96,10 @@ ${
 | Tên | Demo | Chú thích | 
 |-----|------|------|
 ${it.tags.map(function (tag) {
-        var id = (Math.random() +'').replace('.', '');
+            var id = (Math.random() + '').replace('.', '');
             absol.FileSaver.fileExist('https://absol.cf/libs/absol-acomp/demo/' + tag + '.html').then(result => {
                 if (result) {
-                    absol.$('#s'+id).addChild(absol._({
+                    absol.$('#s' + id).addChild(absol._({
                         tag: 'a',
                         props: {
                             href: 'https://absol.cf/libs/absol-acomp/demo/' + tag + '.html',

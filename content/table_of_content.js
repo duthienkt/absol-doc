@@ -54,7 +54,7 @@ toc = {
 tocList.push(toc);
 
 
-var acompNames = Object.keys(absol.AComp.core.creator).sort().map(key => {
+var acompNames = Object.keys(absol.AComp.core.creator).map(key => {
     var clazz = absol.AComp.core.creator[key];
     if (!absol.Dom.ShareInstance.creator[key]) return null;
     if (key.toLowerCase().endsWith('ico') || key.toLowerCase().endsWith('icon')) return null;
@@ -66,8 +66,10 @@ var acompNames = Object.keys(absol.AComp.core.creator).sort().map(key => {
 
 }).filter(x => !!x)
 
-acompNames.push('Text');
+acompNames.push('Text', 'ObsDiv');
 
+
+acompNames.sort();
 toc = {
     name: 'absol-acomp',
     type: 'package',
