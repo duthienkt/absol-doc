@@ -1,6 +1,6 @@
 ## ObsDiv
 
-## [Demo](https://absol.cf/lib)
+## [Demo](https://absol.cf/libs/absol-acomp/demo/obsdiv.html)
 
 ### Tổng quan
 
