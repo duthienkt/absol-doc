@@ -1,5 +1,7 @@
 ## ObsDiv
 
+## [Demo](https://absol.cf/lib)
+
 ### Tổng quan
 
 ObsDiv là module div mở rộng, tự động lắng nghe sự kiện thay đổi kích thước (resize) và hiển thị (visible/hidden/remove)
@@ -38,6 +40,9 @@ theo kích thước phần tử.
 - `viewchange`: Gọi khi trạng thái hiển thị thay đổi (`visible`, `hidden`, `remove`). Tham số event gồm `action` và
   `borderRect`.
 - Các sự kiện này sẽ không được gọi lại nếu ObsDiv bị remove khỏi DOM(sau khi sử dụng 1 lần) và `reusable` là `false`.
+- Khi element được thêm vào DOM, sự kiện `viewchange` với `action` là `visible` sẽ được gọi, đồng thời sự kiện `resize`
+  cũng sẽ được gọi để cập nhật kích thước ban đầu.
+- Khi element bị remove khỏi DOM, sự kiện `viewchange` với `action` là `remove` sẽ được gọi, đồng thời sự kiện resize cũng được gọi với kích thước 0.
 
 ### Ví dụ khởi tạo
 
