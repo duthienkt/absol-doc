@@ -45,6 +45,6 @@ document.body.appendChild(field);
   Kích hoạt khi thêm hoặc xoá token.
 
 ### Điều hướng bàn phím
-- Nhập separator để thêm token
+- Nhập separator hoặc phím enter để thêm token
 - Phím mũi tên để di chuyển giữa các token
 - Backspace/Delete để xoá token
