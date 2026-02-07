@@ -7,6 +7,9 @@
 ```js
 var field = absol._({
     tag: 'tokenfield',
+    style:{
+      size:'regular'  //or "default"
+    },
     props: {
         placeHolder: 'Nhập giá trị, phân tách bằng ;',
         items: ['Một', 'Hai', 'Ba'],
