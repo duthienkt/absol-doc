@@ -4,19 +4,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
     <title>ABSOL Document</title>
-    <link rel="stylesheet" href="https://absol.cf/libs/absol-full/dist/absol-full-css.php">
+
     <link rel="stylesheet" href="https://absol.cf/vendor/highlight/styles/default.min.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="css/markdown.css">
     <script src="https://absol.cf/vendor/highlight/highlight.js"></script>
     <script src="https://absol.cf/vendor/highlight/languages/javascript.min.js"></script>
-    <script src="https://absol.cf/libs/absol-full/dist/absol.dependents.js"></script>
-    <script type="text/javascript" src="https://absol.cf/libs/absol-full/dist/absol-full-js.php"></script>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.12/lib/marked.umd.js"></script>
 </head>
 <body>
 <script>
-    absol.remoteNodeRequireAsync('./js/index.js');
+    const ABSOL_FULL_CSS_URL = 'https://absol.cf/libs/absol-full/dist/absol-full-css.php?date=' + Date.now();
+    const ABSOL_FULL_JS_URL = 'https://absol.cf/libs/absol-full/dist/absol-full-js.php?date=' + Date.now();
+
+    function onLoadComplete(){
+        absol.remoteNodeRequireAsync('./js/index.js');
+    }
+
+    function loadStyleSheet(href){
+        return new Promise((resolve, reject) => {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = href;
+            link.onload = resolve;
+            link.onerror = reject;
+            document.head.appendChild(link);
+        });
+    }
+
+    function loadScript(src){
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = src;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+        });
+    }
+
+    // Load absol-full CSS then JS, then run onLoadComplete()
+    loadStyleSheet(ABSOL_FULL_CSS_URL)
+        .catch(() => null) // CSS fail shouldn't block JS boot
+        .then(() => loadScript(ABSOL_FULL_JS_URL))
+        .then(onLoadComplete)
+        .catch((err) => {
+            console.error('Failed to load absol-full assets', err);
+        });
+
 </script>
 </body>
 </html>
