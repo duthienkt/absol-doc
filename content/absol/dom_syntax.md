@@ -104,6 +104,13 @@ có thể truyền 1 phần tử thay cho việc truyền 1 mảng, ví dụ tru
     element.attr('id',fullParam.id);
 ```
 
+* text: nếu có trường này thì kết quả trả về là một `TextNode`, không tạo `Element`
+
+```js
+    var helloText = _({ text: 'Xin chào absol' });
+    document.body.appendChild(helloText);
+```
+
 * props: tương đương với
 
 ```js
@@ -111,294 +118,100 @@ có thể truyền 1 phần tử thay cho việc truyền 1 mảng, ví dụ tru
 
 ```
 
-
-
-## Basic component
-
-Sử dụng namespace `absol` hoặc
+* once: đăng ký sự kiện chạy đúng một lần, có cùng cú pháp với `on`
 
 ```js
-var _  = absol._;
-var $  = absol.$;
-//Hoặc dùng
-absol.buildDom(absolDomParam);
-absol.buildSvg(absolSvgParam);
-```
-
-
-
-
-### Track Bar
-
-```js
-    var trackbar = _({
-        tag: 'trackbar', 
-        props:{value: 3, leftValue:0, rightValue:10},//defaul: value: 0, leftValue:0, rightValue:1
-        on:{
-            change:function(event){ 
-                console.log(this.value, event.trackbarValue);//both is the same
+    var button = _({
+        tag: 'button',
+        child: { text: 'Chỉ log 1 lần' },
+        once: {
+            click: function () {
+                console.log('Sự kiện này chỉ chạy một lần');
             }
         }
     });
-    body.addChild(trackbar);
+```
 
-    //Tùy chọn kích thước bề ngang
-    var trackbar1 = _({
-        tag: 'trackbar', 
-        style:{
-            width:'500px'
+* elt: dùng lại một node có sẵn rồi tiếp tục gán `attr`, `class`, `style`, `on`, `props`
+
+```js
+    var nativeButton = document.createElement('button');
+    nativeButton.textContent = 'Nút gốc';
+
+    var upgradedButton = _({
+        elt: nativeButton,
+        class: 'primary-btn rounded',
+        style: {
+            color: 'white',
+            background: '#2d6a4f'
         },
-        props:{value: 55, leftValue:20, rightValue:100},
-        on:{
-            change:function(event){ 
-                console.log(this.value, event.trackbarValue);//both is the same
+        on: {
+            click: function () {
+                console.log('Đã attach API của absol vào element có sẵn');
             }
         }
     });
-    body.addChild(trackbar1);
-
 ```
 
-
-
-
-
-## input kèm đơn vị
+* class: ngoài mảng còn có thể truyền một chuỗi có khoảng trắng, thư viện sẽ tự tách thành nhiều class
 
 ```js
-var unitinput = _({
-    tag: 'unitinput', 
-    props:{value: 55, unit:'%'},
-    on:{
-        change:function(event){ 
-            console.log(this.value, event.unitInputValue);//both is the same
-        }
-    }
-});
-body.addChild(unitinput);
-
-var unitinput1 = _({
-    tag: 'unitinput', 
-    style:{
-        width:'20em',
-        'margin-left':'2em'
-    },
-    props:{value: 539924895, unit:'%'},
-    on:{
-        change:function(event){ 
-            console.log(this.value, event.unitInputValue);//both is the same
-        }
-    }
-});
-body.addChild(unitinput1);
+    var box = _({
+        class: 'card shadow-lg p-2'
+    });
 ```
 
-
-
-
-
-### Trackbar có input
+* tag: ngoài chuỗi tên thẻ, có thể truyền trực tiếp hàm creator hoặc các creator đặc biệt đã có sẵn như `svg`, `attachhook`
 
 ```js
-var trackbarInput = _({
-    tag:'trackbarinput', 
-    props:{
-        unit:'$',
-        leftValue:99,
-        rightValue:999,
-        valueFixed:0,
-        value:50
-    }
-});
-body.addChild(trackbarInput);
-
-var trackbarInput1 = _({
-    tag:'trackbarinput', 
-    style:{
-        width:'38em',
-        'margin-left':'5em'
-    },
-    props:
-    // {
-    //     unit:'%',
-    //     rightValue:100,
-    //     valueFixed:0,
-    //     value:15
-    // },
-    {
-        unit: "%",
-        valueFixed: 0,
-        leftValue: 0,
-        rightValue: 100,
-        value: 25,
+    var svgRoot = _({
+        tag: 'svg',
+        attr: {
+            viewBox: '0 0 100 100'
         }
-});
-body.addChild(trackbarInput1);
+    });
 ```
 
-### Text có thể sửa dữ liệu bên trong được
+Creator `svg` ở đây dùng để tạo phần tử SVG gốc. Nếu cần dựng đầy đủ cây SVG theo namespace, nên dùng `absol.buildSvg(...)` hoặc module SVG chuyên biệt.
 
-<p>Đây là một đoạn văn mà <span id="editabe-text">phần chữ này có thể sửa được</span>. Phần sau này cố định </p>
-
-<script>
-    var holder = $('#editabe-text');
-    // console.log(holder.innerHTML);
-    var edtText = _({
-        tag:'editabletext',
-        props:{
-            text:holder.innerHTML
-        }, 
-        on:{
-            click:function(){
-                this.editing = true;
+```js
+    var hook = _({
+        tag: 'attachhook',
+        once: {
+            attached: function () {
+                console.log('Hook đã được gắn vào document.body');
             }
         }
     });
-    holder.selfReplace(edtText);
-</script>
 
-
-```html
-
-<p>Đây là một đoạn văn mà <span id="editabe-text">phần chữ này có thể sửa được</span>. Phần sau này cố định </p>
-
-<script>
-    var holder = $('#editabe-text');
-    // console.log(holder.innerHTML);
-    var edtText = _({
-        tag:'editabletext',
-        props:{
-            text:holder.innerHTML
-        }, 
-        on:{
-            click:function(){
-                this.editing = true;
-            }
-        }
-    });
-    holder.selfReplace(edtText);
-</script>
-
-```
-
-### Checkbox
-
-```js
-    var checkbox = _({
-        tag:'checkbox',
-        style:{
-            'font-size':'30px'
-        },
-        props:{
-            text:'Hello'
-        }
-    }).addTo(body);
-    var checkbox1 = _({
-        tag:'checkbox',
-        style:{
-            'font-size':'60px'
-        },
-        props:{
-            text:'chữ bên trái', rev:true
-        }
-    }).addTo(body);
-    var checkbox2 = _({
-        tag:'checkbox',
-        style:{
-            'font-size':'12px'
-        },
-        props:{
-            text:'Hello'
-        }
-    }).addTo(body);
-
-```
-
-
-### radio
-
-```js
-var radio = _({
-    tag:'radio',
-    style:{
-        'font-size':'30px'
-    },
-    props:{
-        text:'Hello',
-       name:'abc'
-    }
-}).addTo(body);
-
-var radio1 = _({
-    tag:'radio',
-   
-    style:{
-        'font-size':'60px'
-    },
-    props:{
-        text:'Hello',
-         name:'abc'
-    }
-}).addTo(body);
-
-var radio2 = _({
-    tag:'radio',
-    style:{
-        'font-size':'12px'
-    },
- 
-    props:{
-        text:'Hello',
-        name:'abc', rev:true
-
-
-    }
-}).addTo(body);
-
+    body.addChild(hook);
 ```
 
 
 
-* child: các phần tử có thể là dạng ngắn gọn, HTML code, dạng đầy đủ ,hoặc đối tượng kiểu HTML.
-  Việc gắn con vào như thế nào không đơn thuần chỉ là gọi hàm ***appendChild*** mà nó phụ thuộc vào cách
-  hiện thực một đối tượng đặc biệt. Ví dụ:
+
+## absol.$ và absol.$$
+
+`absol.$(query, root)` tìm phần tử đầu tiên khớp với JSPath selector. `absol.$$(query, root)` trả về tất cả phần tử khớp dưới dạng mảng.
 
 ```js
-/*calendar kiểu Element*/
-/**
-*@type{Element}
-*/
-var calendar = _({
-    tag: 'calendar',
-    data: { currentDate: value || new Date() },
-    props:{ text: "abc"}
-    on: {
-        changed: function(val) {
-            input.dateIimeValue = val;
-            value = val;
-            res.emit('changed', val);
-            ++currentSession;
-            res.show = false;
-        }
-    }
+var firstItem = absol.$('.menu-item', document.body);
+var allItems = absol.$$('.menu-item', document.body);
+
+allItems.forEach(function (item) {
+    item.addClass('is-ready');
 });
-var res = _({ tag: 'dropdown',
-            data: { anchor: data.anchor || 'auto' }, 
-            extendEvent: ['changed' ], 
-            child:[{ tag: 'datetime-text-input', attr: { value: 'dd/mm/yyyy', size: '8' }, data: { dateToString:data.dateToString} },
-calendar]});
 ```
 
-* data: có 2 trường hợp xảy ra, data sẽ được đổ vào bên trong đối tượng nếu nó không phải
-  kiểu Element cơ bản, ngược lại, sẽ tương đương với:
+Nếu tham số đầu tiên đã là DOM node thì `absol.$` chỉ attach API của absol và trả lại chính node đó:
 
 ```js
- Object.keys(fullParam.data).forEach(key => element[key] = fullParam.data[key]));
- /*do vậy, đối vơi 1 số đối tượng có thể viết*/
- _({tag:'a', data:{innerHTML:'123456'}});
+var externalNode = document.querySelector('#app');
+var app = absol.$(externalNode);
+app.addStyle('min-height', '100vh');
 ```
 
-* props: dữ liệu được truyền vào sau khi đối tượng được tạo ra
+
 
 ## absol.Dom
 
@@ -429,130 +242,146 @@ window.$ = absol.$;
 absol.calendar = { creator: {} };
 absol.calendar.Dom = new absol.Dom({ creator: absol.calendar.creator });
 
-/*Tạo một đối tượng mới và gắn nó vào không gian riêng*/
+var frame = absol.calendar;
+var _ = frame.Dom._;
+var $ = frame.Dom.$;
 
-frame.creator.vscrollbar = function () {
-    var _ = frame._;
-    var $ = frame.$;
-    var res = _({
+/*Tạo một creator theo cú pháp mới, đầy đủ*/
+
+function VScrollbar() {
+    this.$button = $('.scrollbar-button', this);
+    //các hàm eventHandler sẽ tự động bind với con trỏ this
+    this.on('draginit', this.eventHandler.dragInit, true)
+        .on('drag', this.eventHandler.drag, true)
+        .on('dragend', this.eventHandler.dragEnd, true);
+}
+
+VScrollbar.tag = 'vscrollbar';
+
+VScrollbar.render = function (data, option, dom) {
+    // data  : lấy từ field data của descriptor
+    // option: toàn bộ descriptor đang truyền vào frame.Dom._(...)
+    // dom   : chính instance Dom hiện tại, tương đương frame.Dom
+    // có thể dùng _ ở trên hoặc lấy từ dom._ được truyền vào, có thể nó thuộc 2 đối tượng dom khác nhau
+    return dom._({
         tag: 'scrollbar',
-        class: 'frame-scroll-bar-v'
-    });
+        class: ['frame-scroll-bar-v'].concat(data && data.extraClass || []),
+        child: '.scrollbar-button'
+    }, true);// true: kế thừa
+};
 
+VScrollbar.prototype.updateValue = function () {
+    // ... cập nhật vị trí và kích thước nút kéo
+};
 
-    var body = $('body');
-    var top0, scrollTop0;
-    var mouseMoveEventHandler = function (event) {
-        var dy = event.clientY - top0;
-        var newScrollTop = scrollTop0 + dy * (res.innerHeight / res.scrollHeight);
-        if (newScrollTop + res.scrollHeight > res.innerHeight)
-            newScrollTop = res.innerHeight - res.scrollHeight;
-        if (newScrollTop < 0) newScrollTop = 0;
-        res.scrollTop = newScrollTop;
-        //todo
-        event.scrollTop = newScrollTop;
-        res.emit('scroll', event);
-    };
-
-    var finishEventHandler = function (event) {
-        body.off('mouseleave', finishEventHandler);
-        body.off('mouseup', finishEventHandler);
-        body.off('mousemove', mouseMoveEventHandler);
-    };
-
-    var mouseDownEventHandler = function (event) {
-        var boundRes = res.getBoundingClientRect();
-        var boundButton = res.$button.getBoundingClientRect();
-        top0 = event.clientY;
-        if (event.target == res.$button) {
-            scrollTop0 = res.scrollTop;
-        }
-        else {
-            var newScrollTop = Math.map(top0 - boundButton.height / 2, 0, boundRes.height, 0, res.innerHeight);
-            if (newScrollTop + res.scrollHeight > res.innerHeight)
-                newScrollTop = res.innerHeight - res.scrollHeight;
-            if (newScrollTop < 0) newScrollTop = 0;
-            res.scrollTop = newScrollTop;
-            //todo
-            event.scrollTop = newScrollTop;
-            scrollTop0 = newScrollTop;
-            res.emit('scroll', event);
-        }
-
-        body.on('mouseleave', finishEventHandler);
-        body.on('mouseup', finishEventHandler);
-        body.on('mousemove', mouseMoveEventHandler);
-
-    };
-
-
-    res.on('mousedown', mouseDownEventHandler, true);
-
-
-    return res;
+VScrollbar.prototype.updateStatus = function () {
+    // ... thêm hoặc bỏ class theo trạng thái overflow
 };
 
 
-frame.creator.vscrollbar.prototype.init = function (props) {
-    Object.assign(this, props || {});
+VScrollbar.eventHandler = {};
+
+VScrollbar.eventHandler.dragInit = function (event) {
+    // ... lấy vị trí bắt đầu kéo, tính innerOffset ban đầu, emit scroll nếu cần
 };
 
-frame.creator.vscrollbar.prototype.updateValue = function () {
-    this.$button.addStyle('height', Math.min(this.scrollHeight / this.innerHeight, 1) * 100 + '%');
-    this.$button.addStyle('top', this.scrollTop / this.innerHeight * 100 + '%');
+VScrollbar.eventHandler.drag = function (event) {
+    // ... cập nhật innerOffset trong lúc kéo rồi emit('scroll', event)
 };
 
+VScrollbar.eventHandler.dragEnd = function () {
+    this.removeClass('absol-active');
+};
 
-frame.creator.vscrollbar.property = {
-    scrollTop: {
+VScrollbar.property = {
+    innerOffset: {
         set: function (value) {
-            value = value || 0;
-            if (this._scrollTop != value) {
-                this._scrollTop = value;
-                this.updateValue();
-            }
+            // ... gán giá trị mới và gọi updateValue()
         },
         get: function () {
-            return this._scrollTop || 0;
+            return this._innerOffset || 0;
+        }
+    },
+
+    outerHeight: {
+        set: function (value) {
+            // ... chuẩn hóa giá trị, cập nhật giao diện và trạng thái
+        },
+        get: function () {
+            return this._outerHeight || 0;
         }
     },
 
     innerHeight: {
         set: function (value) {
-            value = value || 1;
-            value = Math.max(value, 1);
-            if (this._innerHeight != value) {
-                this._innerHeight = value;
-                this.updateValue();
-            }
+            // ... chuẩn hóa giá trị, cập nhật giao diện và trạng thái
         },
         get: function () {
             return this._innerHeight || 1;
         }
-    },
-    scrollHeight: {
-        set: function (value) {
-            value = value || 0;
-            value = Math.max(value, 0);
-            if (this._scrollHeight != value) {
-                this._scrollHeight = value;
-                this.updateValue();
-            }
-        },
-        get: function () {
-            return this._scrollHeight || 0;
-        }
     }
 };
 
-/*gắn vào không gian để dùng chung*/
+frame.Dom.install(VScrollbar);
 
-absol.ShareCreator['calendar'] = frame.creator.vscrollbar;
+var scrollbar = frame.Dom._({
+    tag: 'vscrollbar',
+    data: {
+        extraClass: ['dark-scrollbar']
+    },
+    props: {
+        outerHeight: 320,
+        innerHeight: 960,
+        innerOffset: 120
+    }
+});
 ```
+
+Trong ví dụ trên, phần quan trọng là cấu trúc creator mới gồm 4 lớp ý nghĩa: hàm khởi tạo, `render`, `eventHandler`, và `property`. Hàm `render(data, option, dom)` được gọi trước để dựng phần khung DOM; `data` lấy từ field `data`, `option` là toàn bộ descriptor truyền vào, còn `dom` là instance `Dom` đang tạo component. Các đoạn `// ...` là logic chi tiết có thể thay đổi theo từng component.
 
 > Để có thể tạo thêm các đối tượng khác, có thể tham khảo module absol.calendar. Từ bên trong
 không gian riêng, muốn lấy 1 đối tượng trong không gian dùng chung cần sử dụng ```absol._```
-thay vì ```frame.Dom._``` như ví dụ
+thay vì ```frame.Dom._```. Với creator mới, phần dựng cấu trúc nên đặt ở `render`, xử lý sự kiện gom vào `eventHandler`, còn state expose ra ngoài đặt trong `property`.
+
+### Cài thêm creator bằng `install`
+
+`Dom.prototype.install()` nhận nhiều kiểu dữ liệu khác nhau: một hàm creator, mảng creator, object chứa creator, hoặc một `Dom` khác.
+
+```js
+//creator đơn giản nhất
+function Badge() {
+    return _({
+        tag: 'span.badge',
+        child: { text: 'NEW' }
+    });
+}
+
+Badge.tag = 'badge';
+
+absol.ShareDom.install(Badge);
+
+var badge = _({ tag: 'badge' });
+```
+
+```js
+absol.ShareDom.install({
+    greenbox: function () {
+        return _({
+            tag: 'div',
+            class: 'green-box'
+        });
+    }
+});
+
+var greenBox = _({ tag: 'greenbox' });
+```
+
+Có thể kiểm tra creator đã được gắn hay chưa bằng `require()`:
+
+```js
+var badgeCreator = absol.ShareDom.require('badge');
+console.log(!!badgeCreator);
+```
 
 ## absol._
 
@@ -566,6 +395,24 @@ absol.$('body').addChild(a);
 a.click();
 a.selfRemove();
 
+```
+
+Ngoài object descriptor, `absol._` còn nhận trực tiếp các kiểu sau:
+
+```js
+var fromShortSyntax = absol._('button#save-btn.primary');
+var fromHtmlString = absol._('<button class="accent">Lưu</button>');
+var fromTextNode = absol._({ text: 'Một text node độc lập' });
+```
+
+Nếu truyền vào một DOM node có sẵn, `absol._` sẽ attach thêm API của absol thay vì tạo node mới:
+
+```js
+var rawDiv = document.createElement('div');
+rawDiv.innerHTML = 'Created by document.createElement';
+
+var wrappedDiv = absol._(rawDiv);
+wrappedDiv.addClass('mounted-by-absol');
 ```
 
 ## absol.net
