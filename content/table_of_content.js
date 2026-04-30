@@ -34,6 +34,11 @@ toc = {
             href: __dir + '/absol/datetime.md'
         },
         {
+            name: 'net',
+            type: 'group',
+            href: __dir + '/absol/net.md'
+        },
+        {
             name: 'number',
             type: 'group',
             href: __dir + '/absol/number.md'

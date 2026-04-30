@@ -2,6 +2,10 @@
 # absol framework
 
 
+## class AElement
+
+
+
 
 <!-- 
 
@@ -415,26 +419,57 @@ var wrappedDiv = absol._(rawDiv);
 wrappedDiv.addClass('mounted-by-absol');
 ```
 
-## absol.net
+## absol.AElement
 
-### Tải về một file
+`AElement` là lớp nền được attach vào hầu hết DOM element do `absol._(...)` tạo ra hoặc `absol.$(...)` truy xuất ra. Nó mở rộng `HTMLElement` bằng các hàm tiện ích để thao tác DOM, style, class, attribute và event theo kiểu chain.
+
+Không dùng `new AElement()` trực tiếp. Cách dùng phổ biến là lấy một element từ `absol._(...)` hoặc `absol.$(...)`, rồi gọi các method của `AElement` trên chính element đó.
 
 ```js
-absol.net.download(
-    'https://www.volcanion.cf/Etone/music/Rays Of Light ft. Broiler - [Alan Walker].flac',
-    'Rays Of Light ft. Broiler - [Alan Walker].flac',//tên file
-    function(pro, total){
-        console.log('Tiến trình',pro, total);
-    }//có thể có hoặc không
-    ).then(
-        function(){
-        //Thành công
-        },
-        function(err){
-            //Thất bại
-        }
-    );
+var card = absol._({
+    tag: 'div.card',
+    child: { text: 'Hello AElement' }
+});
+
+card
+    .addClass('is-active')
+    .addStyle({ color: '#134074', padding: '12px' })
+    .attr('data-state', 'ready')
+    .addTo(document.body);
 ```
+
+Các method thường dùng:
+
+* `attr(name)` | Params: `name: string` | Tác dụng: lấy giá trị của một attribute.
+* `attr(name, value)` | Params: `name: string`, `value: any` | Tác dụng: gán attribute; nếu `value === null` hoặc `undefined` thì xóa attribute đó.
+* `attr(object)` | Params: `object: Object` | Tác dụng: gán nhiều attribute một lần.
+* `defineAttribute(name, descriptor)` | Params: `name: string`, `descriptor: {get, set, remove}` | Tác dụng: khai báo attribute mở rộng với logic get/set/remove riêng.
+* `defineAttributes(descriptors)` | Params: `descriptors: Object` | Tác dụng: khai báo nhiều attribute mở rộng cùng lúc.
+* `addStyle(name, value)` | Params: `name: string`, `value: string` | Tác dụng: gán một CSS property.
+* `addStyle(styles)` | Params: `styles: Object` | Tác dụng: gán nhiều CSS property một lần.
+* `removeStyle(name)` | Params: `name: string` | Tác dụng: xóa một CSS property khỏi element.
+* `removeStyle(names)` | Params: `names: string[] | Object` | Tác dụng: xóa nhiều CSS property.
+* `addClass(className)` | Params: `className: string | string[]` | Tác dụng: thêm một hoặc nhiều class.
+* `removeClass(className)` | Params: `className: string | string[]` | Tác dụng: xóa một hoặc nhiều class.
+* `hasClass(className)` | Params: `className: string` | Tác dụng: kiểm tra element có chứa class hay không.
+* `addChild(child)` | Params: `child: Node | Node[]` | Tác dụng: thêm một hoặc nhiều node con vào cuối element.
+* `addTo(parent)` | Params: `parent: Node` | Tác dụng: gắn chính element hiện tại vào `parent`.
+* `selfRemove()` | Params: không có | Tác dụng: tự gỡ element khỏi parent hiện tại.
+* `selfReplace(newNode)` | Params: `newNode: Node` | Tác dụng: thay element hiện tại bằng node khác.
+* `clearChild()` | Params: không có | Tác dụng: xóa toàn bộ node con.
+* `addChildBefore(newItem, beforeNode)` | Params: `newItem: Node`, `beforeNode: Node` | Tác dụng: chèn `newItem` vào trước `beforeNode`.
+* `addChildAfter(newItem, afterNode)` | Params: `newItem: Node`, `afterNode?: Node` | Tác dụng: chèn `newItem` sau `afterNode`; nếu không truyền `afterNode` thì chèn lên đầu.
+* `findChildAfter(node)` | Params: `node: Node` | Tác dụng: lấy node con đứng ngay sau `node`.
+* `findChildBefore(node)` | Params: `node: Node` | Tác dụng: lấy node con đứng ngay trước `node`.
+* `getComputedStyleValue(name)` | Params: `name: string` | Tác dụng: đọc giá trị computed style của một CSS property.
+* `getFontSize()` | Params: không có | Tác dụng: lấy font-size hiện tại dưới dạng số.
+* `getBoundingRecursiveRect(depth)` | Params: `depth?: number` | Tác dụng: lấy bounding rect bao toàn bộ cây con tới độ sâu chỉ định.
+* `isDescendantOf(parent)` | Params: `parent: Node` | Tác dụng: kiểm tra element có nằm bên trong `parent` hay không.
+* `getCSSRules()` | Params: không có | Tác dụng: lấy các CSS rule nội bộ đang match với element.
+* `afterDisplayed(timeout)` | Params: `timeout?: number` | Tác dụng: trả về `Promise`, resolve khi element có kích thước hiển thị khác 0.
+
+Điểm cần nhớ: `AElement.prototype.init(props)` sẽ được `Dom._(...)` gọi sau khi element được tạo xong, nên nhiều component nhận dữ liệu khởi tạo thông qua field `props`.
+
 
 ## Ghi chú
 
@@ -445,4 +480,6 @@ body.on('mouseleave', mouseFinishEventHandler, true);
 body.on('mouseleave', mouseFinishEventHandler);
 ```
 Nếu caption = true, mọi sự kiện mouseleave của con cũng sẽ bị gọi, ngược lại chỉ gọi khi thực sự ra khỏi body
+
+
 
