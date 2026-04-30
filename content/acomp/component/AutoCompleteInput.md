@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'AutoCompleteInput'
+    tag: 'autocompleteinput'
 });
 ```
 
 ### Tên tag
 
-- `AutoCompleteInput`
-
+- `autocompleteinput`
 ### require
 
 ```js
-var clazz = absol.require('AutoCompleteInput');
+var clazz = absol.require('autocompleteinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('AutoCompleteInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/AutoCompleteInput.html
+- https://absol.cf/libs/absol-acomp/demo/autocompleteinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('AutoCompleteInput');
+var clazz = absol.require('autocompleteinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

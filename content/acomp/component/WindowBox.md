@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'WindowBox'
+    tag: 'windowbox'
 });
 ```
 
 ### Tên tag
 
-- `WindowBox`
-
+- `windowbox`
 ### require
 
 ```js
-var clazz = absol.require('WindowBox');
+var clazz = absol.require('windowbox');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('WindowBox');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/WindowBox.html
+- https://absol.cf/libs/absol-acomp/demo/windowbox.html
 
 ### props
 
 <script>
-var clazz = absol.require('WindowBox');
+var clazz = absol.require('windowbox');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

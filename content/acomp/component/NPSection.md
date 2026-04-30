@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'NPSection'
+    tag: 'npsection'
 });
 ```
 
 ### Tên tag
 
-- `NPSection`
-
+- `npsection`
 ### require
 
 ```js
-var clazz = absol.require('NPSection');
+var clazz = absol.require('npsection');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('NPSection');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/NPSection.html
+- https://absol.cf/libs/absol-acomp/demo/npsection.html
 
 ### props
 
 <script>
-var clazz = absol.require('NPSection');
+var clazz = absol.require('npsection');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

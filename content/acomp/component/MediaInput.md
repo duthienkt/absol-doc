@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'MediaInput'
+    tag: 'mediainput'
 });
 ```
 
 ### Tên tag
 
-- `MediaInput`
-
+- `mediainput`
 ### require
 
 ```js
-var clazz = absol.require('MediaInput');
+var clazz = absol.require('mediainput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('MediaInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/MediaInput.html
+- https://absol.cf/libs/absol-acomp/demo/mediainput.html
 
 ### props
 
 <script>
-var clazz = absol.require('MediaInput');
+var clazz = absol.require('mediainput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

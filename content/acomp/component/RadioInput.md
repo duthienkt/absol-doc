@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'RadioInput'
+    tag: 'radioinput'
 });
 ```
 
 ### Tên tag
 
-- `RadioInput`
-
+- `radioinput`
 ### require
 
 ```js
-var clazz = absol.require('RadioInput');
+var clazz = absol.require('radioinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('RadioInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/RadioInput.html
+- https://absol.cf/libs/absol-acomp/demo/radioinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('RadioInput');
+var clazz = absol.require('radioinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

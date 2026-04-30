@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'TreeListItem'
+    tag: 'treelistitem'
 });
 ```
 
 ### Tên tag
 
-- `TreeListItem`
-
+- `treelistitem`
 ### require
 
 ```js
-var clazz = absol.require('TreeListItem');
+var clazz = absol.require('treelistitem');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('TreeListItem');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/TreeListItem.html
+- https://absol.cf/libs/absol-acomp/demo/treelistitem.html
 
 ### props
 
 <script>
-var clazz = absol.require('TreeListItem');
+var clazz = absol.require('treelistitem');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

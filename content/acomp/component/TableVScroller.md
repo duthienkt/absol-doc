@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'TableVScroller'
+    tag: 'tablevscroller'
 });
 ```
 
 ### Tên tag
 
-- `TableVScroller`
-
+- `tablevscroller`
 ### require
 
 ```js
-var clazz = absol.require('TableVScroller');
+var clazz = absol.require('tablevscroller');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('TableVScroller');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/TableVScroller.html
+- https://absol.cf/libs/absol-acomp/demo/tablevscroller.html
 
 ### props
 
 <script>
-var clazz = absol.require('TableVScroller');
+var clazz = absol.require('tablevscroller');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

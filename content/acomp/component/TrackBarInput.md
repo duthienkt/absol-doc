@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'TrackBarInput'
+    tag: 'trackbarinput'
 });
 ```
 
 ### Tên tag
 
-- `TrackBarInput`
-
+- `trackbarinput`
 ### require
 
 ```js
-var clazz = absol.require('TrackBarInput');
+var clazz = absol.require('trackbarinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('TrackBarInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/TrackBarInput.html
+- https://absol.cf/libs/absol-acomp/demo/trackbarinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('TrackBarInput');
+var clazz = absol.require('trackbarinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

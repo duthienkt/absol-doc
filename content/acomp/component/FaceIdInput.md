@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'FaceIDInput'
+    tag: 'faceidinput'
 });
 ```
 
 ### Tên tag
 
-- `FaceIDInput`
-
+- `faceidinput`
 ### require
 
 ```js
-var clazz = absol.require('FaceIDInput');
+var clazz = absol.require('faceidinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('FaceIDInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/FaceIDInput.html
+- https://absol.cf/libs/absol-acomp/demo/faceidinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('FaceIDInput');
+var clazz = absol.require('faceidinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

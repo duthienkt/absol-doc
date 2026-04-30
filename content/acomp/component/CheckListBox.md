@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'CheckListBox'
+    tag: 'checklistbox'
 });
 ```
 
 ### Tên tag
 
-- `CheckListBox`
-
+- `checklistbox`
 ### require
 
 ```js
-var clazz = absol.require('CheckListBox');
+var clazz = absol.require('checklistbox');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('CheckListBox');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/CheckListBox.html
+- https://absol.cf/libs/absol-acomp/demo/checklistbox.html
 
 ### props
 
 <script>
-var clazz = absol.require('CheckListBox');
+var clazz = absol.require('checklistbox');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

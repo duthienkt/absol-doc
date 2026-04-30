@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'SelectTreeMenu'
+    tag: 'selecttreemenu'
 });
 ```
 
 ### Tên tag
 
-- `SelectTreeMenu`
-
+- `selecttreemenu`
 ### require
 
 ```js
-var clazz = absol.require('SelectTreeMenu');
+var clazz = absol.require('selecttreemenu');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('SelectTreeMenu');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/SelectTreeMenu.html
+- https://absol.cf/libs/absol-acomp/demo/selecttreemenu.html
 
 ### props
 
 <script>
-var clazz = absol.require('SelectTreeMenu');
+var clazz = absol.require('selecttreemenu');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

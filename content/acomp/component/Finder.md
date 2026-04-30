@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'Finder'
+    tag: 'finder'
 });
 ```
 
 ### Tên tag
 
-- `Finder`
-
+- `finder`
 ### require
 
 ```js
-var clazz = absol.require('Finder');
+var clazz = absol.require('finder');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('Finder');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/Finder.html
+- https://absol.cf/libs/absol-acomp/demo/finder.html
 
 ### props
 
 <script>
-var clazz = absol.require('Finder');
+var clazz = absol.require('finder');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

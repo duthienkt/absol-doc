@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'ObjectMergeTool'
+    tag: 'objectmergetool'
 });
 ```
 
 ### Tên tag
 
-- `ObjectMergeTool`
-
+- `objectmergetool`
 ### require
 
 ```js
-var clazz = absol.require('ObjectMergeTool');
+var clazz = absol.require('objectmergetool');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('ObjectMergeTool');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/ObjectMergeTool.html
+- https://absol.cf/libs/absol-acomp/demo/objectmergetool.html
 
 ### props
 
 <script>
-var clazz = absol.require('ObjectMergeTool');
+var clazz = absol.require('objectmergetool');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

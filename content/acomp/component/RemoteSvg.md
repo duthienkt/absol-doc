@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'RemoteSvg'
+    tag: 'remotesvg'
 });
 ```
 
 ### Tên tag
 
-- `RemoteSvg`
-
+- `remotesvg`
 ### require
 
 ```js
-var clazz = absol.require('RemoteSvg');
+var clazz = absol.require('remotesvg');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('RemoteSvg');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/RemoteSvg.html
+- https://absol.cf/libs/absol-acomp/demo/remotesvg.html
 
 ### props
 
 <script>
-var clazz = absol.require('RemoteSvg');
+var clazz = absol.require('remotesvg');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'SnackBar'
+    tag: 'snackbar'
 });
 ```
 
 ### Tên tag
 
-- `SnackBar`
-
+- `snackbar`
 ### require
 
 ```js
-var clazz = absol.require('SnackBar');
+var clazz = absol.require('snackbar');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('SnackBar');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/SnackBar.html
+- https://absol.cf/libs/absol-acomp/demo/snackbar.html
 
 ### props
 
 <script>
-var clazz = absol.require('SnackBar');
+var clazz = absol.require('snackbar');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

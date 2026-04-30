@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'HMenuItem'
+    tag: 'hmenuitem'
 });
 ```
 
 ### Tên tag
 
-- `HMenuItem`
-
+- `hmenuitem`
 ### require
 
 ```js
-var clazz = absol.require('HMenuItem');
+var clazz = absol.require('hmenuitem');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('HMenuItem');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/HMenuItem.html
+- https://absol.cf/libs/absol-acomp/demo/hmenuitem.html
 
 ### props
 
 <script>
-var clazz = absol.require('HMenuItem');
+var clazz = absol.require('hmenuitem');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

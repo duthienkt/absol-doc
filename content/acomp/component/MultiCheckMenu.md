@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'MultiCheckMenu'
+    tag: 'multicheckmenu'
 });
 ```
 
 ### Tên tag
 
-- `MultiCheckMenu`
-
+- `multicheckmenu`
 ### require
 
 ```js
-var clazz = absol.require('MultiCheckMenu');
+var clazz = absol.require('multicheckmenu');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('MultiCheckMenu');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/MultiCheckMenu.html
+- https://absol.cf/libs/absol-acomp/demo/multicheckmenu.html
 
 ### props
 
 <script>
-var clazz = absol.require('MultiCheckMenu');
+var clazz = absol.require('multicheckmenu');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

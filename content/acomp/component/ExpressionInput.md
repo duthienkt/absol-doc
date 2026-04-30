@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'ExpressionInput'
+    tag: 'expressioninput'
 });
 ```
 
 ### Tên tag
 
-- `ExpressionInput`
-
+- `expressioninput`
 ### require
 
 ```js
-var clazz = absol.require('ExpressionInput');
+var clazz = absol.require('expressioninput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('ExpressionInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/ExpressionInput.html
+- https://absol.cf/libs/absol-acomp/demo/expressioninput.html
 
 ### props
 
 <script>
-var clazz = absol.require('ExpressionInput');
+var clazz = absol.require('expressioninput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'CopyableIconTooltip'
+    tag: 'copyableicontooltip'
 });
 ```
 
 ### Tên tag
 
-- `CopyableIconTooltip`
-
+- `copyableicontooltip`
 ### require
 
 ```js
-var clazz = absol.require('CopyableIconTooltip');
+var clazz = absol.require('copyableicontooltip');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('CopyableIconTooltip');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/CopyableIconTooltip.html
+- https://absol.cf/libs/absol-acomp/demo/copyableicontooltip.html
 
 ### props
 
 <script>
-var clazz = absol.require('CopyableIconTooltip');
+var clazz = absol.require('copyableicontooltip');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

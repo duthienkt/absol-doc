@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'DropPanelStack'
+    tag: 'droppanelstack'
 });
 ```
 
 ### Tên tag
 
-- `DropPanelStack`
-
+- `droppanelstack`
 ### require
 
 ```js
-var clazz = absol.require('DropPanelStack');
+var clazz = absol.require('droppanelstack');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('DropPanelStack');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/DropPanelStack.html
+- https://absol.cf/libs/absol-acomp/demo/droppanelstack.html
 
 ### props
 
 <script>
-var clazz = absol.require('DropPanelStack');
+var clazz = absol.require('droppanelstack');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

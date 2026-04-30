@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'PlaceSearchAutoCompleteInput'
+    tag: 'placesearchautocompleteinput'
 });
 ```
 
 ### Tên tag
 
-- `PlaceSearchAutoCompleteInput`
-
+- `placesearchautocompleteinput`
 ### require
 
 ```js
-var clazz = absol.require('PlaceSearchAutoCompleteInput');
+var clazz = absol.require('placesearchautocompleteinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('PlaceSearchAutoCompleteInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/PlaceSearchAutoCompleteInput.html
+- https://absol.cf/libs/absol-acomp/demo/placesearchautocompleteinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('PlaceSearchAutoCompleteInput');
+var clazz = absol.require('placesearchautocompleteinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

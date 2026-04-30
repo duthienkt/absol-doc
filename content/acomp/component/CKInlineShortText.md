@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'CKInlineShortText'
+    tag: 'ckinlineshorttext'
 });
 ```
 
 ### Tên tag
 
-- `CKInlineShortText`
-
+- `ckinlineshorttext`
 ### require
 
 ```js
-var clazz = absol.require('CKInlineShortText');
+var clazz = absol.require('ckinlineshorttext');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('CKInlineShortText');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/CKInlineShortText.html
+- https://absol.cf/libs/absol-acomp/demo/ckinlineshorttext.html
 
 ### props
 
 <script>
-var clazz = absol.require('CKInlineShortText');
+var clazz = absol.require('ckinlineshorttext');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

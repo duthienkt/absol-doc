@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'VerticalTimeline'
+    tag: 'verticaltimeline'
 });
 ```
 
 ### Tên tag
 
-- `VerticalTimeline`
-
+- `verticaltimeline`
 ### require
 
 ```js
-var clazz = absol.require('VerticalTimeline');
+var clazz = absol.require('verticaltimeline');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('VerticalTimeline');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/VerticalTimeline.html
+- https://absol.cf/libs/absol-acomp/demo/verticaltimeline.html
 
 ### props
 
 <script>
-var clazz = absol.require('VerticalTimeline');
+var clazz = absol.require('verticaltimeline');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

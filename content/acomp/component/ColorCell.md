@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'ColorCell'
+    tag: 'colorcell'
 });
 ```
 
 ### Tên tag
 
-- `ColorCell`
-
+- `colorcell`
 ### require
 
 ```js
-var clazz = absol.require('ColorCell');
+var clazz = absol.require('colorcell');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('ColorCell');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/ColorCell.html
+- https://absol.cf/libs/absol-acomp/demo/colorcell.html
 
 ### props
 
 <script>
-var clazz = absol.require('ColorCell');
+var clazz = absol.require('colorcell');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

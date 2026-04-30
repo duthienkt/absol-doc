@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'VRootMenu'
+    tag: 'vrootmenu'
 });
 ```
 
 ### Tên tag
 
-- `VRootMenu`
-
+- `vrootmenu`
 ### require
 
 ```js
-var clazz = absol.require('VRootMenu');
+var clazz = absol.require('vrootmenu');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('VRootMenu');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/VRootMenu.html
+- https://absol.cf/libs/absol-acomp/demo/vrootmenu.html
 
 ### props
 
 <script>
-var clazz = absol.require('VRootMenu');
+var clazz = absol.require('vrootmenu');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

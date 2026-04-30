@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'TableOfTextInput'
+    tag: 'tableoftextinput'
 });
 ```
 
 ### Tên tag
 
-- `TableOfTextInput`
-
+- `tableoftextinput`
 ### require
 
 ```js
-var clazz = absol.require('TableOfTextInput');
+var clazz = absol.require('tableoftextinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('TableOfTextInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/TableOfTextInput.html
+- https://absol.cf/libs/absol-acomp/demo/tableoftextinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('TableOfTextInput');
+var clazz = absol.require('tableoftextinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

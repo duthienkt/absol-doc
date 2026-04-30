@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'ContextCaptor'
+    tag: 'contextcaptor'
 });
 ```
 
 ### Tên tag
 
-- `ContextCaptor`
-
+- `contextcaptor`
 ### require
 
 ```js
-var clazz = absol.require('ContextCaptor');
+var clazz = absol.require('contextcaptor');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('ContextCaptor');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/ContextCaptor.html
+- https://absol.cf/libs/absol-acomp/demo/contextcaptor.html
 
 ### props
 
 <script>
-var clazz = absol.require('ContextCaptor');
+var clazz = absol.require('contextcaptor');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'LoadingCubeModal'
+    tag: 'loadingcubemodal'
 });
 ```
 
 ### Tên tag
 
-- `LoadingCubeModal`
-
+- `loadingcubemodal`
 ### require
 
 ```js
-var clazz = absol.require('LoadingCubeModal');
+var clazz = absol.require('loadingcubemodal');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('LoadingCubeModal');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/LoadingCubeModal.html
+- https://absol.cf/libs/absol-acomp/demo/loadingcubemodal.html
 
 ### props
 
 <script>
-var clazz = absol.require('LoadingCubeModal');
+var clazz = absol.require('loadingcubemodal');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

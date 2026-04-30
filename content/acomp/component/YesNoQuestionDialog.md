@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'YesNoQuestionDialog'
+    tag: 'yesnoquestiondialog'
 });
 ```
 
 ### Tên tag
 
-- `YesNoQuestionDialog`
-
+- `yesnoquestiondialog`
 ### require
 
 ```js
-var clazz = absol.require('YesNoQuestionDialog');
+var clazz = absol.require('yesnoquestiondialog');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('YesNoQuestionDialog');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/YesNoQuestionDialog.html
+- https://absol.cf/libs/absol-acomp/demo/yesnoquestiondialog.html
 
 ### props
 
 <script>
-var clazz = absol.require('YesNoQuestionDialog');
+var clazz = absol.require('yesnoquestiondialog');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

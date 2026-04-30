@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'TimeSelectInput'
+    tag: 'timeselectinput'
 });
 ```
 
 ### Tên tag
 
-- `TimeSelectInput`
-
+- `timeselectinput`
 ### require
 
 ```js
-var clazz = absol.require('TimeSelectInput');
+var clazz = absol.require('timeselectinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('TimeSelectInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/TimeSelectInput.html
+- https://absol.cf/libs/absol-acomp/demo/timeselectinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('TimeSelectInput');
+var clazz = absol.require('timeselectinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

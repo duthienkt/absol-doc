@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'SelectBoxItem'
+    tag: 'selectboxitem'
 });
 ```
 
 ### Tên tag
 
-- `SelectBoxItem`
-
+- `selectboxitem`
 ### require
 
 ```js
-var clazz = absol.require('SelectBoxItem');
+var clazz = absol.require('selectboxitem');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('SelectBoxItem');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/SelectBoxItem.html
+- https://absol.cf/libs/absol-acomp/demo/selectboxitem.html
 
 ### props
 
 <script>
-var clazz = absol.require('SelectBoxItem');
+var clazz = absol.require('selectboxitem');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

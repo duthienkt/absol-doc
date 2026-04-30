@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'CheckTreeBox'
+    tag: 'checktreebox'
 });
 ```
 
 ### Tên tag
 
-- `CheckTreeBox`
-
+- `checktreebox`
 ### require
 
 ```js
-var clazz = absol.require('CheckTreeBox');
+var clazz = absol.require('checktreebox');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('CheckTreeBox');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/CheckTreeBox.html
+- https://absol.cf/libs/absol-acomp/demo/checktreebox.html
 
 ### props
 
 <script>
-var clazz = absol.require('CheckTreeBox');
+var clazz = absol.require('checktreebox');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

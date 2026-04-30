@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'SinglePage'
+    tag: 'singlepage'
 });
 ```
 
 ### Tên tag
 
-- `SinglePage`
-
+- `singlepage`
 ### require
 
 ```js
-var clazz = absol.require('SinglePage');
+var clazz = absol.require('singlepage');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('SinglePage');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/SinglePage.html
+- https://absol.cf/libs/absol-acomp/demo/singlepage.html
 
 ### props
 
 <script>
-var clazz = absol.require('SinglePage');
+var clazz = absol.require('singlepage');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

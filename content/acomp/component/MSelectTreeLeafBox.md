@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'MSelectTreeLeafBox'
+    tag: 'mselecttreeleafbox'
 });
 ```
 
 ### Tên tag
 
-- `MSelectTreeLeafBox`
-
+- `mselecttreeleafbox`
 ### require
 
 ```js
-var clazz = absol.require('MSelectTreeLeafBox');
+var clazz = absol.require('mselecttreeleafbox');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('MSelectTreeLeafBox');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/MSelectTreeLeafBox.html
+- https://absol.cf/libs/absol-acomp/demo/mselecttreeleafbox.html
 
 ### props
 
 <script>
-var clazz = absol.require('MSelectTreeLeafBox');
+var clazz = absol.require('mselecttreeleafbox');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

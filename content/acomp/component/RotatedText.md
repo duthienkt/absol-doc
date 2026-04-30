@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'RotatedText'
+    tag: 'rotatedtext'
 });
 ```
 
 ### Tên tag
 
-- `RotatedText`
-
+- `rotatedtext`
 ### require
 
 ```js
-var clazz = absol.require('RotatedText');
+var clazz = absol.require('rotatedtext');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('RotatedText');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/RotatedText.html
+- https://absol.cf/libs/absol-acomp/demo/rotatedtext.html
 
 ### props
 
 <script>
-var clazz = absol.require('RotatedText');
+var clazz = absol.require('rotatedtext');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

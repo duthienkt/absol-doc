@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'DateNLevelInput'
+    tag: 'datenlevelinput'
 });
 ```
 
 ### Tên tag
 
-- `DateNLevelInput`
-
+- `datenlevelinput`
 ### require
 
 ```js
-var clazz = absol.require('DateNLevelInput');
+var clazz = absol.require('datenlevelinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('DateNLevelInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/DateNLevelInput.html
+- https://absol.cf/libs/absol-acomp/demo/datenlevelinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('DateNLevelInput');
+var clazz = absol.require('datenlevelinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

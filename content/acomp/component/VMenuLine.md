@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'VMenuLine'
+    tag: 'vmenuline'
 });
 ```
 
 ### Tên tag
 
-- `VMenuLine`
-
+- `vmenuline`
 ### require
 
 ```js
-var clazz = absol.require('VMenuLine');
+var clazz = absol.require('vmenuline');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('VMenuLine');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/VMenuLine.html
+- https://absol.cf/libs/absol-acomp/demo/vmenuline.html
 
 ### props
 
 <script>
-var clazz = absol.require('VMenuLine');
+var clazz = absol.require('vmenuline');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

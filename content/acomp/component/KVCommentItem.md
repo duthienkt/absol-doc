@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'KVCommentItem'
+    tag: 'kvcommentitem'
 });
 ```
 
 ### Tên tag
 
-- `KVCommentItem`
-
+- `kvcommentitem`
 ### require
 
 ```js
-var clazz = absol.require('KVCommentItem');
+var clazz = absol.require('kvcommentitem');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('KVCommentItem');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/KVCommentItem.html
+- https://absol.cf/libs/absol-acomp/demo/kvcommentitem.html
 
 ### props
 
 <script>
-var clazz = absol.require('KVCommentItem');
+var clazz = absol.require('kvcommentitem');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

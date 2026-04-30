@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'MessageQuote'
+    tag: 'messagequote'
 });
 ```
 
 ### Tên tag
 
-- `MessageQuote`
-
+- `messagequote`
 ### require
 
 ```js
-var clazz = absol.require('MessageQuote');
+var clazz = absol.require('messagequote');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('MessageQuote');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/MessageQuote.html
+- https://absol.cf/libs/absol-acomp/demo/messagequote.html
 
 ### props
 
 <script>
-var clazz = absol.require('MessageQuote');
+var clazz = absol.require('messagequote');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

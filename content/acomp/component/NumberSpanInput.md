@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'NumberSpanInput'
+    tag: 'numberspaninput'
 });
 ```
 
 ### Tên tag
 
-- `NumberSpanInput`
-
+- `numberspaninput`
 ### require
 
 ```js
-var clazz = absol.require('NumberSpanInput');
+var clazz = absol.require('numberspaninput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('NumberSpanInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/NumberSpanInput.html
+- https://absol.cf/libs/absol-acomp/demo/numberspaninput.html
 
 ### props
 
 <script>
-var clazz = absol.require('NumberSpanInput');
+var clazz = absol.require('numberspaninput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

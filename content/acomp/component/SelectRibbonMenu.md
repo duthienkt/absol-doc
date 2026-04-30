@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'SelectRibbonMenu'
+    tag: 'selectribbonmenu'
 });
 ```
 
 ### Tên tag
 
-- `SelectRibbonMenu`
-
+- `selectribbonmenu`
 ### require
 
 ```js
-var clazz = absol.require('SelectRibbonMenu');
+var clazz = absol.require('selectribbonmenu');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('SelectRibbonMenu');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/SelectRibbonMenu.html
+- https://absol.cf/libs/absol-acomp/demo/selectribbonmenu.html
 
 ### props
 
 <script>
-var clazz = absol.require('SelectRibbonMenu');
+var clazz = absol.require('selectribbonmenu');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

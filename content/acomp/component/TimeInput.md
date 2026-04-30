@@ -11,7 +11,6 @@ var component = absol._({
 ### Tên tag
 
 - `timeinput`
-
 ### require
 
 ```js

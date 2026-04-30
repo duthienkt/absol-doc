@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'LocationView'
+    tag: 'locationview'
 });
 ```
 
 ### Tên tag
 
-- `LocationView`
-
+- `locationview`
 ### require
 
 ```js
-var clazz = absol.require('LocationView');
+var clazz = absol.require('locationview');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('LocationView');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/LocationView.html
+- https://absol.cf/libs/absol-acomp/demo/locationview.html
 
 ### props
 
 <script>
-var clazz = absol.require('LocationView');
+var clazz = absol.require('locationview');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

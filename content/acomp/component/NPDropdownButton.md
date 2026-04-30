@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'NPDropdownButton'
+    tag: 'npdropdownbutton'
 });
 ```
 
 ### Tên tag
 
-- `NPDropdownButton`
-
+- `npdropdownbutton`
 ### require
 
 ```js
-var clazz = absol.require('NPDropdownButton');
+var clazz = absol.require('npdropdownbutton');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('NPDropdownButton');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/NPDropdownButton.html
+- https://absol.cf/libs/absol-acomp/demo/npdropdownbutton.html
 
 ### props
 
 <script>
-var clazz = absol.require('NPDropdownButton');
+var clazz = absol.require('npdropdownbutton');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

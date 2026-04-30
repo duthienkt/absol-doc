@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'QuickListButton'
+    tag: 'quicklistbutton'
 });
 ```
 
 ### Tên tag
 
-- `QuickListButton`
-
+- `quicklistbutton`
 ### require
 
 ```js
-var clazz = absol.require('QuickListButton');
+var clazz = absol.require('quicklistbutton');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('QuickListButton');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/QuickListButton.html
+- https://absol.cf/libs/absol-acomp/demo/quicklistbutton.html
 
 ### props
 
 <script>
-var clazz = absol.require('QuickListButton');
+var clazz = absol.require('quicklistbutton');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

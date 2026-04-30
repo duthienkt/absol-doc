@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'FaceIdVerificationImage'
+    tag: 'faceidverificationimage'
 });
 ```
 
 ### Tên tag
 
-- `FaceIdVerificationImage`
-
+- `faceidverificationimage`
 ### require
 
 ```js
-var clazz = absol.require('FaceIdVerificationImage');
+var clazz = absol.require('faceidverificationimage');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('FaceIdVerificationImage');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/FaceIdVerificationImage.html
+- https://absol.cf/libs/absol-acomp/demo/faceidverificationimage.html
 
 ### props
 
 <script>
-var clazz = absol.require('FaceIdVerificationImage');
+var clazz = absol.require('faceidverificationimage');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

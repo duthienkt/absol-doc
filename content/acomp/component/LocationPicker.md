@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'LocationPicker'
+    tag: 'locationpicker'
 });
 ```
 
 ### Tên tag
 
-- `LocationPicker`
-
+- `locationpicker`
 ### require
 
 ```js
-var clazz = absol.require('LocationPicker');
+var clazz = absol.require('locationpicker');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('LocationPicker');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/LocationPicker.html
+- https://absol.cf/libs/absol-acomp/demo/locationpicker.html
 
 ### props
 
 <script>
-var clazz = absol.require('LocationPicker');
+var clazz = absol.require('locationpicker');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

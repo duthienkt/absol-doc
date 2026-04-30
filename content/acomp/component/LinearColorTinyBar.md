@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'LinearColorTinyBar'
+    tag: 'linearcolortinybar'
 });
 ```
 
 ### Tên tag
 
-- `LinearColorTinyBar`
-
+- `linearcolortinybar`
 ### require
 
 ```js
-var clazz = absol.require('LinearColorTinyBar');
+var clazz = absol.require('linearcolortinybar');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('LinearColorTinyBar');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/LinearColorTinyBar.html
+- https://absol.cf/libs/absol-acomp/demo/linearcolortinybar.html
 
 ### props
 
 <script>
-var clazz = absol.require('LinearColorTinyBar');
+var clazz = absol.require('linearcolortinybar');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'ChromeCalendar'
+    tag: 'chromecalendar'
 });
 ```
 
 ### Tên tag
 
-- `ChromeCalendar`
-
+- `chromecalendar`
 ### require
 
 ```js
-var clazz = absol.require('ChromeCalendar');
+var clazz = absol.require('chromecalendar');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('ChromeCalendar');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/ChromeCalendar.html
+- https://absol.cf/libs/absol-acomp/demo/chromecalendar.html
 
 ### props
 
 <script>
-var clazz = absol.require('ChromeCalendar');
+var clazz = absol.require('chromecalendar');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

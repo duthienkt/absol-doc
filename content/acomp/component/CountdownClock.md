@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'CountdownClock'
+    tag: 'countdownclock'
 });
 ```
 
 ### Tên tag
 
-- `CountdownClock`
-
+- `countdownclock`
 ### require
 
 ```js
-var clazz = absol.require('CountdownClock');
+var clazz = absol.require('countdownclock');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('CountdownClock');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/CountdownClock.html
+- https://absol.cf/libs/absol-acomp/demo/countdownclock.html
 
 ### props
 
 <script>
-var clazz = absol.require('CountdownClock');
+var clazz = absol.require('countdownclock');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

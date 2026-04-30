@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'RibbonButton'
+    tag: 'ribbonbutton'
 });
 ```
 
 ### Tên tag
 
-- `RibbonButton`
-
+- `ribbonbutton`
 ### require
 
 ```js
-var clazz = absol.require('RibbonButton');
+var clazz = absol.require('ribbonbutton');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('RibbonButton');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/RibbonButton.html
+- https://absol.cf/libs/absol-acomp/demo/ribbonbutton.html
 
 ### props
 
 <script>
-var clazz = absol.require('RibbonButton');
+var clazz = absol.require('ribbonbutton');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

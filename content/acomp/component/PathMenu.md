@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'PathMenu'
+    tag: 'pathmenu'
 });
 ```
 
 ### Tên tag
 
-- `PathMenu`
-
+- `pathmenu`
 ### require
 
 ```js
-var clazz = absol.require('PathMenu');
+var clazz = absol.require('pathmenu');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('PathMenu');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/PathMenu.html
+- https://absol.cf/libs/absol-acomp/demo/pathmenu.html
 
 ### props
 
 <script>
-var clazz = absol.require('PathMenu');
+var clazz = absol.require('pathmenu');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

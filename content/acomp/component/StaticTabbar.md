@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'StaticTabbar'
+    tag: 'statictabbar'
 });
 ```
 
 ### Tên tag
 
-- `StaticTabbar`
-
+- `statictabbar`
 ### require
 
 ```js
-var clazz = absol.require('StaticTabbar');
+var clazz = absol.require('statictabbar');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('StaticTabbar');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/StaticTabbar.html
+- https://absol.cf/libs/absol-acomp/demo/statictabbar.html
 
 ### props
 
 <script>
-var clazz = absol.require('StaticTabbar');
+var clazz = absol.require('statictabbar');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

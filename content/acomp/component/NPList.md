@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'NPList'
+    tag: 'nplist'
 });
 ```
 
 ### Tên tag
 
-- `NPList`
-
+- `nplist`
 ### require
 
 ```js
-var clazz = absol.require('NPList');
+var clazz = absol.require('nplist');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('NPList');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/NPList.html
+- https://absol.cf/libs/absol-acomp/demo/nplist.html
 
 ### props
 
 <script>
-var clazz = absol.require('NPList');
+var clazz = absol.require('nplist');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

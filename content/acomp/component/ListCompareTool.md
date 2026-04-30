@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'ListCompareTool'
+    tag: 'listcomparetool'
 });
 ```
 
 ### Tên tag
 
-- `ListCompareTool`
-
+- `listcomparetool`
 ### require
 
 ```js
-var clazz = absol.require('ListCompareTool');
+var clazz = absol.require('listcomparetool');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('ListCompareTool');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/ListCompareTool.html
+- https://absol.cf/libs/absol-acomp/demo/listcomparetool.html
 
 ### props
 
 <script>
-var clazz = absol.require('ListCompareTool');
+var clazz = absol.require('listcomparetool');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

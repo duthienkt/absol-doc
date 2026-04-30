@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'QuickPath'
+    tag: 'quickpath'
 });
 ```
 
 ### Tên tag
 
-- `QuickPath`
-
+- `quickpath`
 ### require
 
 ```js
-var clazz = absol.require('QuickPath');
+var clazz = absol.require('quickpath');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('QuickPath');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/QuickPath.html
+- https://absol.cf/libs/absol-acomp/demo/quickpath.html
 
 ### props
 
 <script>
-var clazz = absol.require('QuickPath');
+var clazz = absol.require('quickpath');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

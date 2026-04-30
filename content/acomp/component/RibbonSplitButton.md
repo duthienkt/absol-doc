@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'RibbonSplitButton'
+    tag: 'ribbonsplitbutton'
 });
 ```
 
 ### Tên tag
 
-- `RibbonSplitButton`
-
+- `ribbonsplitbutton`
 ### require
 
 ```js
-var clazz = absol.require('RibbonSplitButton');
+var clazz = absol.require('ribbonsplitbutton');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('RibbonSplitButton');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/RibbonSplitButton.html
+- https://absol.cf/libs/absol-acomp/demo/ribbonsplitbutton.html
 
 ### props
 
 <script>
-var clazz = absol.require('RibbonSplitButton');
+var clazz = absol.require('ribbonsplitbutton');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

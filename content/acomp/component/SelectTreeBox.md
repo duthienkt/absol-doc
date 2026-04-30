@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'SelectTreeBox'
+    tag: 'selecttreebox'
 });
 ```
 
 ### Tên tag
 
-- `SelectTreeBox`
-
+- `selecttreebox`
 ### require
 
 ```js
-var clazz = absol.require('SelectTreeBox');
+var clazz = absol.require('selecttreebox');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('SelectTreeBox');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/SelectTreeBox.html
+- https://absol.cf/libs/absol-acomp/demo/selecttreebox.html
 
 ### props
 
 <script>
-var clazz = absol.require('SelectTreeBox');
+var clazz = absol.require('selecttreebox');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

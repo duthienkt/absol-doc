@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'DraggableVStack'
+    tag: 'draggablevstack'
 });
 ```
 
 ### Tên tag
 
-- `DraggableVStack`
-
+- `draggablevstack`
 ### require
 
 ```js
-var clazz = absol.require('DraggableVStack');
+var clazz = absol.require('draggablevstack');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('DraggableVStack');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/DraggableVStack.html
+- https://absol.cf/libs/absol-acomp/demo/draggablevstack.html
 
 ### props
 
 <script>
-var clazz = absol.require('DraggableVStack');
+var clazz = absol.require('draggablevstack');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

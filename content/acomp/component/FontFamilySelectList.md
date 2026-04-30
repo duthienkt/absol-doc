@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'FontFamilySelectList'
+    tag: 'fontfamilyselectlist'
 });
 ```
 
 ### Tên tag
 
-- `FontFamilySelectList`
-
+- `fontfamilyselectlist`
 ### require
 
 ```js
-var clazz = absol.require('FontFamilySelectList');
+var clazz = absol.require('fontfamilyselectlist');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('FontFamilySelectList');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/FontFamilySelectList.html
+- https://absol.cf/libs/absol-acomp/demo/fontfamilyselectlist.html
 
 ### props
 
 <script>
-var clazz = absol.require('FontFamilySelectList');
+var clazz = absol.require('fontfamilyselectlist');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

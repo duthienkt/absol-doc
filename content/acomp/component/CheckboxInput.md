@@ -4,19 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'CheckboxInput'
+    tag: 'checkboxinput'
 });
 ```
 
 ### Tên tag
 
-- `CheckboxInput`
 - `checkboxinput`
-
 ### require
 
 ```js
-var clazz = absol.require('CheckboxInput');
+var clazz = absol.require('checkboxinput');
 ```
 
 ### Class
@@ -30,12 +28,12 @@ var clazz = absol.require('CheckboxInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/CheckboxInput.html
+- https://absol.cf/libs/absol-acomp/demo/checkboxinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('CheckboxInput');
+var clazz = absol.require('checkboxinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

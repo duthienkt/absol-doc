@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'ProgressBar'
+    tag: 'progressbar'
 });
 ```
 
 ### Tên tag
 
-- `ProgressBar`
-
+- `progressbar`
 ### require
 
 ```js
-var clazz = absol.require('ProgressBar');
+var clazz = absol.require('progressbar');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('ProgressBar');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/ProgressBar.html
+- https://absol.cf/libs/absol-acomp/demo/progressbar.html
 
 ### props
 
 <script>
-var clazz = absol.require('ProgressBar');
+var clazz = absol.require('progressbar');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

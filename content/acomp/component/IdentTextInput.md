@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'IdentTextInput'
+    tag: 'identtextinput'
 });
 ```
 
 ### Tên tag
 
-- `IdentTextInput`
-
+- `identtextinput`
 ### require
 
 ```js
-var clazz = absol.require('IdentTextInput');
+var clazz = absol.require('identtextinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('IdentTextInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/IdentTextInput.html
+- https://absol.cf/libs/absol-acomp/demo/identtextinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('IdentTextInput');
+var clazz = absol.require('identtextinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

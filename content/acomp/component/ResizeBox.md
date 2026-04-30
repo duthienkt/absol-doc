@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'ResizeBox'
+    tag: 'resizebox'
 });
 ```
 
 ### Tên tag
 
-- `ResizeBox`
-
+- `resizebox`
 ### require
 
 ```js
-var clazz = absol.require('ResizeBox');
+var clazz = absol.require('resizebox');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('ResizeBox');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/ResizeBox.html
+- https://absol.cf/libs/absol-acomp/demo/resizebox.html
 
 ### props
 
 <script>
-var clazz = absol.require('ResizeBox');
+var clazz = absol.require('resizebox');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

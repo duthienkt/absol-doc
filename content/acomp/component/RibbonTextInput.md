@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'RibbonTextInput'
+    tag: 'ribbontextinput'
 });
 ```
 
 ### Tên tag
 
-- `RibbonTextInput`
-
+- `ribbontextinput`
 ### require
 
 ```js
-var clazz = absol.require('RibbonTextInput');
+var clazz = absol.require('ribbontextinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('RibbonTextInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/RibbonTextInput.html
+- https://absol.cf/libs/absol-acomp/demo/ribbontextinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('RibbonTextInput');
+var clazz = absol.require('ribbontextinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

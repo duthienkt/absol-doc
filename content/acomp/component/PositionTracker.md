@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'PositionTracker'
+    tag: 'positiontracker'
 });
 ```
 
 ### Tên tag
 
-- `PositionTracker`
-
+- `positiontracker`
 ### require
 
 ```js
-var clazz = absol.require('PositionTracker');
+var clazz = absol.require('positiontracker');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('PositionTracker');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/PositionTracker.html
+- https://absol.cf/libs/absol-acomp/demo/positiontracker.html
 
 ### props
 
 <script>
-var clazz = absol.require('PositionTracker');
+var clazz = absol.require('positiontracker');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'MExploreItemBlock'
+    tag: 'mexploreitemblock'
 });
 ```
 
 ### Tên tag
 
-- `MExploreItemBlock`
-
+- `mexploreitemblock`
 ### require
 
 ```js
-var clazz = absol.require('MExploreItemBlock');
+var clazz = absol.require('mexploreitemblock');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('MExploreItemBlock');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/MExploreItemBlock.html
+- https://absol.cf/libs/absol-acomp/demo/mexploreitemblock.html
 
 ### props
 
 <script>
-var clazz = absol.require('MExploreItemBlock');
+var clazz = absol.require('mexploreitemblock');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

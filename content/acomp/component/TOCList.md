@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'TOCList'
+    tag: 'toclist'
 });
 ```
 
 ### Tên tag
 
-- `TOCList`
-
+- `toclist`
 ### require
 
 ```js
-var clazz = absol.require('TOCList');
+var clazz = absol.require('toclist');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('TOCList');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/TOCList.html
+- https://absol.cf/libs/absol-acomp/demo/toclist.html
 
 ### props
 
 <script>
-var clazz = absol.require('TOCList');
+var clazz = absol.require('toclist');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

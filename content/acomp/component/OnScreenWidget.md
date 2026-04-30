@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'OnScreenWidget'
+    tag: 'onscreenwidget'
 });
 ```
 
 ### Tên tag
 
-- `OnScreenWidget`
-
+- `onscreenwidget`
 ### require
 
 ```js
-var clazz = absol.require('OnScreenWidget');
+var clazz = absol.require('onscreenwidget');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('OnScreenWidget');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/OnScreenWidget.html
+- https://absol.cf/libs/absol-acomp/demo/onscreenwidget.html
 
 ### props
 
 <script>
-var clazz = absol.require('OnScreenWidget');
+var clazz = absol.require('onscreenwidget');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

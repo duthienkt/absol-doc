@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'MNPNotificationVirtualDropdown'
+    tag: 'mnpnotificationvirtualdropdown'
 });
 ```
 
 ### Tên tag
 
-- `MNPNotificationVirtualDropdown`
-
+- `mnpnotificationvirtualdropdown`
 ### require
 
 ```js
-var clazz = absol.require('MNPNotificationVirtualDropdown');
+var clazz = absol.require('mnpnotificationvirtualdropdown');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('MNPNotificationVirtualDropdown');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/MNPNotificationVirtualDropdown.html
+- https://absol.cf/libs/absol-acomp/demo/mnpnotificationvirtualdropdown.html
 
 ### props
 
 <script>
-var clazz = absol.require('MNPNotificationVirtualDropdown');
+var clazz = absol.require('mnpnotificationvirtualdropdown');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

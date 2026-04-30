@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'ExpGroup'
+    tag: 'expgroup'
 });
 ```
 
 ### Tên tag
 
-- `ExpGroup`
-
+- `expgroup`
 ### require
 
 ```js
-var clazz = absol.require('ExpGroup');
+var clazz = absol.require('expgroup');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('ExpGroup');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/ExpGroup.html
+- https://absol.cf/libs/absol-acomp/demo/expgroup.html
 
 ### props
 
 <script>
-var clazz = absol.require('ExpGroup');
+var clazz = absol.require('expgroup');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

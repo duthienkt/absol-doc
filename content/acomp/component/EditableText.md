@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'EditableText'
+    tag: 'editabletext'
 });
 ```
 
 ### Tên tag
 
-- `EditableText`
-
+- `editabletext`
 ### require
 
 ```js
-var clazz = absol.require('EditableText');
+var clazz = absol.require('editabletext');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('EditableText');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/EditableText.html
+- https://absol.cf/libs/absol-acomp/demo/editabletext.html
 
 ### props
 
 <script>
-var clazz = absol.require('EditableText');
+var clazz = absol.require('editabletext');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'TOCItem'
+    tag: 'tocitem'
 });
 ```
 
 ### Tên tag
 
-- `TOCItem`
-
+- `tocitem`
 ### require
 
 ```js
-var clazz = absol.require('TOCItem');
+var clazz = absol.require('tocitem');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('TOCItem');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/TOCItem.html
+- https://absol.cf/libs/absol-acomp/demo/tocitem.html
 
 ### props
 
 <script>
-var clazz = absol.require('TOCItem');
+var clazz = absol.require('tocitem');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

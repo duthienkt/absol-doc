@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'ToolTip'
+    tag: 'tooltip'
 });
 ```
 
 ### Tên tag
 
-- `ToolTip`
-
+- `tooltip`
 ### require
 
 ```js
-var clazz = absol.require('ToolTip');
+var clazz = absol.require('tooltip');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('ToolTip');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/ToolTip.html
+- https://absol.cf/libs/absol-acomp/demo/tooltip.html
 
 ### props
 
 <script>
-var clazz = absol.require('ToolTip');
+var clazz = absol.require('tooltip');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

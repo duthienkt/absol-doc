@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'DualSelectBox'
+    tag: 'dualselectbox'
 });
 ```
 
 ### Tên tag
 
-- `DualSelectBox`
-
+- `dualselectbox`
 ### require
 
 ```js
-var clazz = absol.require('DualSelectBox');
+var clazz = absol.require('dualselectbox');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('DualSelectBox');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/DualSelectBox.html
+- https://absol.cf/libs/absol-acomp/demo/dualselectbox.html
 
 ### props
 
 <script>
-var clazz = absol.require('DualSelectBox');
+var clazz = absol.require('dualselectbox');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

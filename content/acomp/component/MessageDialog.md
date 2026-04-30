@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'MessageDialog'
+    tag: 'messagedialog'
 });
 ```
 
 ### Tên tag
 
-- `MessageDialog`
-
+- `messagedialog`
 ### require
 
 ```js
-var clazz = absol.require('MessageDialog');
+var clazz = absol.require('messagedialog');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('MessageDialog');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/MessageDialog.html
+- https://absol.cf/libs/absol-acomp/demo/messagedialog.html
 
 ### props
 
 <script>
-var clazz = absol.require('MessageDialog');
+var clazz = absol.require('messagedialog');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

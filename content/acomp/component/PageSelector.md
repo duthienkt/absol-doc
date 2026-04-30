@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'PageSelector'
+    tag: 'pageselector'
 });
 ```
 
 ### Tên tag
 
-- `PageSelector`
-
+- `pageselector`
 ### require
 
 ```js
-var clazz = absol.require('PageSelector');
+var clazz = absol.require('pageselector');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('PageSelector');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/PageSelector.html
+- https://absol.cf/libs/absol-acomp/demo/pageselector.html
 
 ### props
 
 <script>
-var clazz = absol.require('PageSelector');
+var clazz = absol.require('pageselector');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

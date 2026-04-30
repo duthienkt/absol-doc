@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'HexaSectionLabel'
+    tag: 'hexasectionlabel'
 });
 ```
 
 ### Tên tag
 
-- `HexaSectionLabel`
-
+- `hexasectionlabel`
 ### require
 
 ```js
-var clazz = absol.require('HexaSectionLabel');
+var clazz = absol.require('hexasectionlabel');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('HexaSectionLabel');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/HexaSectionLabel.html
+- https://absol.cf/libs/absol-acomp/demo/hexasectionlabel.html
 
 ### props
 
 <script>
-var clazz = absol.require('HexaSectionLabel');
+var clazz = absol.require('hexasectionlabel');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

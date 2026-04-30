@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'FollowerToggler'
+    tag: 'followertoggler'
 });
 ```
 
 ### Tên tag
 
-- `FollowerToggler`
-
+- `followertoggler`
 ### require
 
 ```js
-var clazz = absol.require('FollowerToggler');
+var clazz = absol.require('followertoggler');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('FollowerToggler');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/FollowerToggler.html
+- https://absol.cf/libs/absol-acomp/demo/followertoggler.html
 
 ### props
 
 <script>
-var clazz = absol.require('FollowerToggler');
+var clazz = absol.require('followertoggler');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

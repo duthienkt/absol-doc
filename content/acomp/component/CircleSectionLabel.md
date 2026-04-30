@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'CircleSectionLabel'
+    tag: 'circlesectionlabel'
 });
 ```
 
 ### Tên tag
 
-- `CircleSectionLabel`
-
+- `circlesectionlabel`
 ### require
 
 ```js
-var clazz = absol.require('CircleSectionLabel');
+var clazz = absol.require('circlesectionlabel');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('CircleSectionLabel');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/CircleSectionLabel.html
+- https://absol.cf/libs/absol-acomp/demo/circlesectionlabel.html
 
 ### props
 
 <script>
-var clazz = absol.require('CircleSectionLabel');
+var clazz = absol.require('circlesectionlabel');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

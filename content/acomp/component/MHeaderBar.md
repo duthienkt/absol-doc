@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'MHeaderBar'
+    tag: 'mheaderbar'
 });
 ```
 
 ### Tên tag
 
-- `MHeaderBar`
-
+- `mheaderbar`
 ### require
 
 ```js
-var clazz = absol.require('MHeaderBar');
+var clazz = absol.require('mheaderbar');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('MHeaderBar');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/MHeaderBar.html
+- https://absol.cf/libs/absol-acomp/demo/mheaderbar.html
 
 ### props
 
 <script>
-var clazz = absol.require('MHeaderBar');
+var clazz = absol.require('mheaderbar');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

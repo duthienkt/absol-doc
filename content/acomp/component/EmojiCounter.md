@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'EmojiCounter'
+    tag: 'emojicounter'
 });
 ```
 
 ### Tên tag
 
-- `EmojiCounter`
-
+- `emojicounter`
 ### require
 
 ```js
-var clazz = absol.require('EmojiCounter');
+var clazz = absol.require('emojicounter');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('EmojiCounter');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/EmojiCounter.html
+- https://absol.cf/libs/absol-acomp/demo/emojicounter.html
 
 ### props
 
 <script>
-var clazz = absol.require('EmojiCounter');
+var clazz = absol.require('emojicounter');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

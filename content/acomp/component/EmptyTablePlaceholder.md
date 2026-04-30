@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'EmptyTablePlaceholder'
+    tag: 'emptytableplaceholder'
 });
 ```
 
 ### Tên tag
 
-- `EmptyTablePlaceholder`
-
+- `emptytableplaceholder`
 ### require
 
 ```js
-var clazz = absol.require('EmptyTablePlaceholder');
+var clazz = absol.require('emptytableplaceholder');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('EmptyTablePlaceholder');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/EmptyTablePlaceholder.html
+- https://absol.cf/libs/absol-acomp/demo/emptytableplaceholder.html
 
 ### props
 
 <script>
-var clazz = absol.require('EmptyTablePlaceholder');
+var clazz = absol.require('emptytableplaceholder');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

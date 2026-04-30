@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'TextArea2'
+    tag: 'textarea2'
 });
 ```
 
 ### Tên tag
 
-- `TextArea2`
-
+- `textarea2`
 ### require
 
 ```js
-var clazz = absol.require('TextArea2');
+var clazz = absol.require('textarea2');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('TextArea2');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/TextArea2.html
+- https://absol.cf/libs/absol-acomp/demo/textarea2.html
 
 ### props
 
 <script>
-var clazz = absol.require('TextArea2');
+var clazz = absol.require('textarea2');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

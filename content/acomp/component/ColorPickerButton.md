@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'ColorPickerButton'
+    tag: 'colorpickerbutton'
 });
 ```
 
 ### Tên tag
 
-- `ColorPickerButton`
-
+- `colorpickerbutton`
 ### require
 
 ```js
-var clazz = absol.require('ColorPickerButton');
+var clazz = absol.require('colorpickerbutton');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('ColorPickerButton');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/ColorPickerButton.html
+- https://absol.cf/libs/absol-acomp/demo/colorpickerbutton.html
 
 ### props
 
 <script>
-var clazz = absol.require('ColorPickerButton');
+var clazz = absol.require('colorpickerbutton');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

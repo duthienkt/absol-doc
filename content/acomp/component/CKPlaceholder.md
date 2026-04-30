@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'CKPlaceholder'
+    tag: 'ckplaceholder'
 });
 ```
 
 ### Tên tag
 
-- `CKPlaceholder`
-
+- `ckplaceholder`
 ### require
 
 ```js
-var clazz = absol.require('CKPlaceholder');
+var clazz = absol.require('ckplaceholder');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('CKPlaceholder');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/CKPlaceholder.html
+- https://absol.cf/libs/absol-acomp/demo/ckplaceholder.html
 
 ### props
 
 <script>
-var clazz = absol.require('CKPlaceholder');
+var clazz = absol.require('ckplaceholder');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

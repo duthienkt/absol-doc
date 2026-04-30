@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'WidthHeightResizer'
+    tag: 'widthheightresizer'
 });
 ```
 
 ### Tên tag
 
-- `WidthHeightResizer`
-
+- `widthheightresizer`
 ### require
 
 ```js
-var clazz = absol.require('WidthHeightResizer');
+var clazz = absol.require('widthheightresizer');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('WidthHeightResizer');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/WidthHeightResizer.html
+- https://absol.cf/libs/absol-acomp/demo/widthheightresizer.html
 
 ### props
 
 <script>
-var clazz = absol.require('WidthHeightResizer');
+var clazz = absol.require('widthheightresizer');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'ProcessLBar'
+    tag: 'processlbar'
 });
 ```
 
 ### Tên tag
 
-- `ProcessLBar`
-
+- `processlbar`
 ### require
 
 ```js
-var clazz = absol.require('ProcessLBar');
+var clazz = absol.require('processlbar');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('ProcessLBar');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/ProcessLBar.html
+- https://absol.cf/libs/absol-acomp/demo/processlbar.html
 
 ### props
 
 <script>
-var clazz = absol.require('ProcessLBar');
+var clazz = absol.require('processlbar');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

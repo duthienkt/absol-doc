@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'SingleSelectList'
+    tag: 'singleselectlist'
 });
 ```
 
 ### Tên tag
 
-- `SingleSelectList`
-
+- `singleselectlist`
 ### require
 
 ```js
-var clazz = absol.require('SingleSelectList');
+var clazz = absol.require('singleselectlist');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('SingleSelectList');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/SingleSelectList.html
+- https://absol.cf/libs/absol-acomp/demo/singleselectlist.html
 
 ### props
 
 <script>
-var clazz = absol.require('SingleSelectList');
+var clazz = absol.require('singleselectlist');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

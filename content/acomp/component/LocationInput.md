@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'LocationInput'
+    tag: 'locationinput'
 });
 ```
 
 ### Tên tag
 
-- `LocationInput`
-
+- `locationinput`
 ### require
 
 ```js
-var clazz = absol.require('LocationInput');
+var clazz = absol.require('locationinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('LocationInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/LocationInput.html
+- https://absol.cf/libs/absol-acomp/demo/locationinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('LocationInput');
+var clazz = absol.require('locationinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

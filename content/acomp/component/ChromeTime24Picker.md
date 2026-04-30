@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'ChromeTime24Picker'
+    tag: 'chrometime24picker'
 });
 ```
 
 ### Tên tag
 
-- `ChromeTime24Picker`
-
+- `chrometime24picker`
 ### require
 
 ```js
-var clazz = absol.require('ChromeTime24Picker');
+var clazz = absol.require('chrometime24picker');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('ChromeTime24Picker');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/ChromeTime24Picker.html
+- https://absol.cf/libs/absol-acomp/demo/chrometime24picker.html
 
 ### props
 
 <script>
-var clazz = absol.require('ChromeTime24Picker');
+var clazz = absol.require('chrometime24picker');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

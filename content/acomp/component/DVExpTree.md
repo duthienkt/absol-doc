@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'DVExpTree'
+    tag: 'dvexptree'
 });
 ```
 
 ### Tên tag
 
-- `DVExpTree`
-
+- `dvexptree`
 ### require
 
 ```js
-var clazz = absol.require('DVExpTree');
+var clazz = absol.require('dvexptree');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('DVExpTree');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/DVExpTree.html
+- https://absol.cf/libs/absol-acomp/demo/dvexptree.html
 
 ### props
 
 <script>
-var clazz = absol.require('DVExpTree');
+var clazz = absol.require('dvexptree');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

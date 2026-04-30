@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'PickingList'
+    tag: 'pickinglist'
 });
 ```
 
 ### Tên tag
 
-- `PickingList`
-
+- `pickinglist`
 ### require
 
 ```js
-var clazz = absol.require('PickingList');
+var clazz = absol.require('pickinglist');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('PickingList');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/PickingList.html
+- https://absol.cf/libs/absol-acomp/demo/pickinglist.html
 
 ### props
 
 <script>
-var clazz = absol.require('PickingList');
+var clazz = absol.require('pickinglist');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

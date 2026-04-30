@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'EmojiPickerTooltip'
+    tag: 'emojipickertooltip'
 });
 ```
 
 ### Tên tag
 
-- `EmojiPickerTooltip`
-
+- `emojipickertooltip`
 ### require
 
 ```js
-var clazz = absol.require('EmojiPickerTooltip');
+var clazz = absol.require('emojipickertooltip');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('EmojiPickerTooltip');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/EmojiPickerTooltip.html
+- https://absol.cf/libs/absol-acomp/demo/emojipickertooltip.html
 
 ### props
 
 <script>
-var clazz = absol.require('EmojiPickerTooltip');
+var clazz = absol.require('emojipickertooltip');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

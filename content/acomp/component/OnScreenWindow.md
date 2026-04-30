@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'OnScreenWindow'
+    tag: 'onscreenwindow'
 });
 ```
 
 ### Tên tag
 
-- `OnScreenWindow`
-
+- `onscreenwindow`
 ### require
 
 ```js
-var clazz = absol.require('OnScreenWindow');
+var clazz = absol.require('onscreenwindow');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('OnScreenWindow');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/OnScreenWindow.html
+- https://absol.cf/libs/absol-acomp/demo/onscreenwindow.html
 
 ### props
 
 <script>
-var clazz = absol.require('OnScreenWindow');
+var clazz = absol.require('onscreenwindow');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

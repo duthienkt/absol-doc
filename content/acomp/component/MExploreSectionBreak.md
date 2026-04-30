@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'MExploreSectionBreak'
+    tag: 'mexploresectionbreak'
 });
 ```
 
 ### Tên tag
 
-- `MExploreSectionBreak`
-
+- `mexploresectionbreak`
 ### require
 
 ```js
-var clazz = absol.require('MExploreSectionBreak');
+var clazz = absol.require('mexploresectionbreak');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('MExploreSectionBreak');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/MExploreSectionBreak.html
+- https://absol.cf/libs/absol-acomp/demo/mexploresectionbreak.html
 
 ### props
 
 <script>
-var clazz = absol.require('MExploreSectionBreak');
+var clazz = absol.require('mexploresectionbreak');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

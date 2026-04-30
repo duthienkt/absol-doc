@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'PageIndicator'
+    tag: 'pageindicator'
 });
 ```
 
 ### Tên tag
 
-- `PageIndicator`
-
+- `pageindicator`
 ### require
 
 ```js
-var clazz = absol.require('PageIndicator');
+var clazz = absol.require('pageindicator');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('PageIndicator');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/PageIndicator.html
+- https://absol.cf/libs/absol-acomp/demo/pageindicator.html
 
 ### props
 
 <script>
-var clazz = absol.require('PageIndicator');
+var clazz = absol.require('pageindicator');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

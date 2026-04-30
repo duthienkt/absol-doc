@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'SolidColorPicker'
+    tag: 'solidcolorpicker'
 });
 ```
 
 ### Tên tag
 
-- `SolidColorPicker`
-
+- `solidcolorpicker`
 ### require
 
 ```js
-var clazz = absol.require('SolidColorPicker');
+var clazz = absol.require('solidcolorpicker');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('SolidColorPicker');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/SolidColorPicker.html
+- https://absol.cf/libs/absol-acomp/demo/solidcolorpicker.html
 
 ### props
 
 <script>
-var clazz = absol.require('SolidColorPicker');
+var clazz = absol.require('solidcolorpicker');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

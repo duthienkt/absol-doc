@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'VerticalTreeDiagramNode'
+    tag: 'verticaltreediagramnode'
 });
 ```
 
 ### Tên tag
 
-- `VerticalTreeDiagramNode`
-
+- `verticaltreediagramnode`
 ### require
 
 ```js
-var clazz = absol.require('VerticalTreeDiagramNode');
+var clazz = absol.require('verticaltreediagramnode');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('VerticalTreeDiagramNode');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/VerticalTreeDiagramNode.html
+- https://absol.cf/libs/absol-acomp/demo/verticaltreediagramnode.html
 
 ### props
 
 <script>
-var clazz = absol.require('VerticalTreeDiagramNode');
+var clazz = absol.require('verticaltreediagramnode');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

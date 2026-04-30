@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'TimePicker'
+    tag: 'timepicker'
 });
 ```
 
 ### Tên tag
 
-- `TimePicker`
-
+- `timepicker`
 ### require
 
 ```js
-var clazz = absol.require('TimePicker');
+var clazz = absol.require('timepicker');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('TimePicker');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/TimePicker.html
+- https://absol.cf/libs/absol-acomp/demo/timepicker.html
 
 ### props
 
 <script>
-var clazz = absol.require('TimePicker');
+var clazz = absol.require('timepicker');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

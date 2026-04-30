@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'FolderLikeTabBar'
+    tag: 'folderliketabbar'
 });
 ```
 
 ### Tên tag
 
-- `FolderLikeTabBar`
-
+- `folderliketabbar`
 ### require
 
 ```js
-var clazz = absol.require('FolderLikeTabBar');
+var clazz = absol.require('folderliketabbar');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('FolderLikeTabBar');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/FolderLikeTabBar.html
+- https://absol.cf/libs/absol-acomp/demo/folderliketabbar.html
 
 ### props
 
 <script>
-var clazz = absol.require('FolderLikeTabBar');
+var clazz = absol.require('folderliketabbar');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

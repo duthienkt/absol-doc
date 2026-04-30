@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'TokenizeHyperInput'
+    tag: 'tokenizehyperinput'
 });
 ```
 
 ### Tên tag
 
-- `TokenizeHyperInput`
-
+- `tokenizehyperinput`
 ### require
 
 ```js
-var clazz = absol.require('TokenizeHyperInput');
+var clazz = absol.require('tokenizehyperinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('TokenizeHyperInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/TokenizeHyperInput.html
+- https://absol.cf/libs/absol-acomp/demo/tokenizehyperinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('TokenizeHyperInput');
+var clazz = absol.require('tokenizehyperinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'MultiSelectMenu'
+    tag: 'multiselectmenu'
 });
 ```
 
 ### Tên tag
 
-- `MultiSelectMenu`
-
+- `multiselectmenu`
 ### require
 
 ```js
-var clazz = absol.require('MultiSelectMenu');
+var clazz = absol.require('multiselectmenu');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('MultiSelectMenu');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/MultiSelectMenu.html
+- https://absol.cf/libs/absol-acomp/demo/multiselectmenu.html
 
 ### props
 
 <script>
-var clazz = absol.require('MultiSelectMenu');
+var clazz = absol.require('multiselectmenu');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'DateInYearInput'
+    tag: 'dateinyearinput'
 });
 ```
 
 ### Tên tag
 
-- `DateInYearInput`
-
+- `dateinyearinput`
 ### require
 
 ```js
-var clazz = absol.require('DateInYearInput');
+var clazz = absol.require('dateinyearinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('DateInYearInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/DateInYearInput.html
+- https://absol.cf/libs/absol-acomp/demo/dateinyearinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('DateInYearInput');
+var clazz = absol.require('dateinyearinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

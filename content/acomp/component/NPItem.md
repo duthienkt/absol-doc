@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'NPItem'
+    tag: 'npitem'
 });
 ```
 
 ### Tên tag
 
-- `NPItem`
-
+- `npitem`
 ### require
 
 ```js
-var clazz = absol.require('NPItem');
+var clazz = absol.require('npitem');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('NPItem');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/NPItem.html
+- https://absol.cf/libs/absol-acomp/demo/npitem.html
 
 ### props
 
 <script>
-var clazz = absol.require('NPItem');
+var clazz = absol.require('npitem');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

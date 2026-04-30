@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'MDualSelectBox'
+    tag: 'mdualselectbox'
 });
 ```
 
 ### Tên tag
 
-- `MDualSelectBox`
-
+- `mdualselectbox`
 ### require
 
 ```js
-var clazz = absol.require('MDualSelectBox');
+var clazz = absol.require('mdualselectbox');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('MDualSelectBox');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/MDualSelectBox.html
+- https://absol.cf/libs/absol-acomp/demo/mdualselectbox.html
 
 ### props
 
 <script>
-var clazz = absol.require('MDualSelectBox');
+var clazz = absol.require('mdualselectbox');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

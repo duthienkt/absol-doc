@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'MExploreGroup'
+    tag: 'mexploregroup'
 });
 ```
 
 ### Tên tag
 
-- `MExploreGroup`
-
+- `mexploregroup`
 ### require
 
 ```js
-var clazz = absol.require('MExploreGroup');
+var clazz = absol.require('mexploregroup');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('MExploreGroup');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/MExploreGroup.html
+- https://absol.cf/libs/absol-acomp/demo/mexploregroup.html
 
 ### props
 
 <script>
-var clazz = absol.require('MExploreGroup');
+var clazz = absol.require('mexploregroup');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

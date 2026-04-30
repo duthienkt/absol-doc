@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'FlexiconInput'
+    tag: 'flexiconinput'
 });
 ```
 
 ### Tên tag
 
-- `FlexiconInput`
-
+- `flexiconinput`
 ### require
 
 ```js
-var clazz = absol.require('FlexiconInput');
+var clazz = absol.require('flexiconinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('FlexiconInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/FlexiconInput.html
+- https://absol.cf/libs/absol-acomp/demo/flexiconinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('FlexiconInput');
+var clazz = absol.require('flexiconinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

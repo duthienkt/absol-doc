@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'SelectColorSchemeMenu'
+    tag: 'selectcolorschememenu'
 });
 ```
 
 ### Tên tag
 
-- `SelectColorSchemeMenu`
-
+- `selectcolorschememenu`
 ### require
 
 ```js
-var clazz = absol.require('SelectColorSchemeMenu');
+var clazz = absol.require('selectcolorschememenu');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('SelectColorSchemeMenu');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/SelectColorSchemeMenu.html
+- https://absol.cf/libs/absol-acomp/demo/selectcolorschememenu.html
 
 ### props
 
 <script>
-var clazz = absol.require('SelectColorSchemeMenu');
+var clazz = absol.require('selectcolorschememenu');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

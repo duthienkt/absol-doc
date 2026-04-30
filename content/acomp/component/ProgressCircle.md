@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'ProgressCircle'
+    tag: 'progresscircle'
 });
 ```
 
 ### Tên tag
 
-- `ProgressCircle`
-
+- `progresscircle`
 ### require
 
 ```js
-var clazz = absol.require('ProgressCircle');
+var clazz = absol.require('progresscircle');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('ProgressCircle');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/ProgressCircle.html
+- https://absol.cf/libs/absol-acomp/demo/progresscircle.html
 
 ### props
 
 <script>
-var clazz = absol.require('ProgressCircle');
+var clazz = absol.require('progresscircle');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

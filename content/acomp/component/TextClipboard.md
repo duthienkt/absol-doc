@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'TextClipboard'
+    tag: 'textclipboard'
 });
 ```
 
 ### Tên tag
 
-- `TextClipboard`
-
+- `textclipboard`
 ### require
 
 ```js
-var clazz = absol.require('TextClipboard');
+var clazz = absol.require('textclipboard');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('TextClipboard');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/TextClipboard.html
+- https://absol.cf/libs/absol-acomp/demo/textclipboard.html
 
 ### props
 
 <script>
-var clazz = absol.require('TextClipboard');
+var clazz = absol.require('textclipboard');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'CheckTreeLeafOnlyBox'
+    tag: 'checktreeleafonlybox'
 });
 ```
 
 ### Tên tag
 
-- `CheckTreeLeafOnlyBox`
-
+- `checktreeleafonlybox`
 ### require
 
 ```js
-var clazz = absol.require('CheckTreeLeafOnlyBox');
+var clazz = absol.require('checktreeleafonlybox');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('CheckTreeLeafOnlyBox');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/CheckTreeLeafOnlyBox.html
+- https://absol.cf/libs/absol-acomp/demo/checktreeleafonlybox.html
 
 ### props
 
 <script>
-var clazz = absol.require('CheckTreeLeafOnlyBox');
+var clazz = absol.require('checktreeleafonlybox');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'MultiDateInput'
+    tag: 'multidateinput'
 });
 ```
 
 ### Tên tag
 
-- `MultiDateInput`
-
+- `multidateinput`
 ### require
 
 ```js
-var clazz = absol.require('MultiDateInput');
+var clazz = absol.require('multidateinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('MultiDateInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/MultiDateInput.html
+- https://absol.cf/libs/absol-acomp/demo/multidateinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('MultiDateInput');
+var clazz = absol.require('multidateinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',

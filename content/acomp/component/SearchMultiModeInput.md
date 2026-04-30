@@ -4,18 +4,17 @@
 
 ```js
 var component = absol._({
-    tag: 'SearchMultiModeInput'
+    tag: 'searchmultimodeinput'
 });
 ```
 
 ### Tên tag
 
-- `SearchMultiModeInput`
-
+- `searchmultimodeinput`
 ### require
 
 ```js
-var clazz = absol.require('SearchMultiModeInput');
+var clazz = absol.require('searchmultimodeinput');
 ```
 
 ### Class
@@ -28,12 +27,12 @@ var clazz = absol.require('SearchMultiModeInput');
 
 ### Demo
 
-- https://absol.cf/libs/absol-acomp/demo/SearchMultiModeInput.html
+- https://absol.cf/libs/absol-acomp/demo/searchmultimodeinput.html
 
 ### props
 
 <script>
-var clazz = absol.require('SearchMultiModeInput');
+var clazz = absol.require('searchmultimodeinput');
 var properties = (clazz && clazz.property) || {};
 render({
     tag: 'table',
