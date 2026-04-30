@@ -11,6 +11,7 @@ var component = absol._({
 ### Tên tag
 
 - `textarea2`
+
 ### require
 
 ```js

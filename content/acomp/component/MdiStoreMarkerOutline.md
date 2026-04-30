@@ -11,6 +11,7 @@ var component = absol._({
 ### Tên tag
 
 - `mdi-store-marker-outline`
+
 ### require
 
 ```js
