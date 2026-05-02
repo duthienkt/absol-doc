@@ -16,3 +16,10 @@ Bước 3. Ví dụ ở đay ta thấy trong object sự kiện press, muốn bi
 Bước 1 tương tự
 
 Bước 2: gõ `temp1._azar_extendTags`, đây là 1 dictionary mà mỗi phần tử là constructor(function) dẫn tới code module, đồng thời cũng biết nó tạo từ tag nào
+
+
+# Error Log
+
+## Tìm undefined
+
+Ví dụ báo lỗi `items` of undefined ở cột 63, bật tìm kiếm code ở chế độ regex trong VS code hoặc Atom, dùng cú pháp `^[^;]{61}\.items`, 
