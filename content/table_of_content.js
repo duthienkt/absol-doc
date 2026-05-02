@@ -19,6 +19,11 @@ toc = {
             href: __dir + '/absol/dom_syntax.md'
         },
         {
+            name: "Debug",
+            type: 'group',
+            href: __dir + '/absol/debug.md'
+        },
+        {
             name: 'Alarm',
             type: 'class',
             href: __dir + '/absol/Alarm.md'
