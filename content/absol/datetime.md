@@ -329,4 +329,33 @@ Các token cơ bản:
 
 * **Parameters:**
     * `{null|{dayOffset?:` — duration?: number}}range
-    * `opt` — 
+    * `opt` —
+
+---
+
+## isDayOffsetInTimeRange24Gmt
+
+```js
+isDayOffsetInTimeRange24Gmt(range, dayOffset)
+```
+
+Kiểm tra xem một giá trị `dayOffset` (số mili giây tính từ đầu ngày) có nằm trong khoảng thời gian 24 giờ (`TimeRange24Data`) hay không. Hàm này hỗ trợ các khoảng thời gian vượt qua nửa đêm (qua ngày mới).
+
+- **range**: `{ dayOffset: number, duration: number } | null` – Khoảng thời gian 24 giờ, có thể null (ý nghĩa là null range, luôn trả về false).
+- **dayOffset**: `number` (tùy chọn) – Số mili giây tính từ đầu ngày. Nếu không truyền, mặc định là thời điểm hiện tại (theo GMT).
+
+### Giá trị trả về
+- `true` nếu `dayOffset` nằm trong khoảng thời gian 24 giờ được chỉ định bởi `range` (bao gồm cả trường hợp khoảng thời gian vượt qua nửa đêm).
+- `false` nếu không nằm trong khoảng hoặc `range` là null.
+
+### Lưu ý
+- Hàm sử dụng khoảng nửa mở `[start, end]`.
+- Tự động xử lý các khoảng thời gian vượt qua nửa đêm (ví dụ: từ 22:00 đến 02:00 hôm sau).
+
+### Ví dụ
+```js
+const range = { dayOffset: 22 * 3600000, duration: 4 * 3600000 }; // 22:00 đến 02:00 hôm sau
+isDayOffsetInTimeRange24Gmt(range, 23 * 3600000); // true (23:00)
+isDayOffsetInTimeRange24Gmt(range, 1 * 3600000);  // true (01:00)
+isDayOffsetInTimeRange24Gmt(range, 3 * 3600000);  // false (03:00)
+```
