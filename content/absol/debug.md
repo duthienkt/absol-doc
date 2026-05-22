@@ -26,7 +26,7 @@ Ví dụ báo lỗi `items` of undefined ở cột 63, bật tìm kiếm code �
 
 ## Tìm biến chưa khai báo
 
-Ví dụ báo lỗi chưa khai báo `list` ở cột 66, dùng regex tìm theo cú pháp `^[^;]{44}[^a-z_\."]list[^a-z_]`
+Ví dụ báo lỗi chưa khai báo `list` ở cột 46, dùng regex tìm theo cú pháp `^[^;]{44}[^a-z_\."]list[^a-z_]`
 
 # CSS class của các module
 
