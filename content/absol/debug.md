@@ -24,6 +24,10 @@ Bước 2: gõ `temp1._azar_extendTags`, đây là 1 dictionary mà mỗi phần
 
 Ví dụ báo lỗi `items` of undefined ở cột 63, bật tìm kiếm code ở chế độ regex trong VS code hoặc Atom, dùng cú pháp `^[^;]{61}\.items`, 
 
+## Tìm biến chưa khai báo
+
+Ví dụ báo lỗi chưa khai báo `list` ở cột 66, dùng regex tìm theo cú pháp `^[^;]{44}[^a-z_\."]list[^a-z_]`
+
 # CSS class của các module
 
 ## Cách nhận biết
