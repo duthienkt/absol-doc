@@ -331,6 +331,74 @@ Các token cơ bản:
     * `{null|{dayOffset?:` — duration?: number}}range
     * `opt` —
 
+#### `function getDefaultFirstDayOfWeek()`
+
+* Trả về giá trị mặc định của ngày đầu tuần (0-6).
+* **Returns:** `number`
+
+#### `function setDefaultFirstDayOfWeek(value)`
+
+* Thiết lập ngày đầu tuần mặc định cho các hàm liên quan đến tuần.
+* **Parameters:**
+    * `value` — `number`
+
+#### `function sameDateInUTC(value)`
+
+* Tạo một đối tượng `Date` mới tại 00:00:00 UTC ứng với cùng ngày/tháng/năm của `value` theo local time.
+* **Parameters:**
+    * `value` — `Date`
+* **Returns:** `Date`
+
+#### `function monthOfTwoDate(date0, date1)`
+
+* Tính khoảng cách giữa 2 ngày theo đơn vị tháng (có thể là số thập phân).
+* **Parameters:**
+    * `date0` — `Date`
+    * `date1` — `Date`
+* **Returns:** `number`
+
+#### `function implicitDate(o)`
+
+* Chuyển đổi dữ liệu đầu vào (`Date`, `number`, `string`) sang `Date` nếu có thể, ngược lại trả về `null`.
+* **Parameters:**
+    * `o` — `Date|number|string`
+* **Returns:** `Date|null`
+
+#### `function isTimeRange24Null(range)`
+
+* Kiểm tra một `TimeRange24Data` có phải là giá trị rỗng hay không.
+* **Parameters:**
+    * `range` — `null|{dayOffset?: number, duration?: number}`
+* **Returns:** `boolean`
+
+#### `function getTimeRangeFromStep(date, type, n)`
+
+* Lấy khoảng thời gian theo bước (`date`, `week`, `month`, `quarter`, `year`, `last_7_days`).
+* **Parameters:**
+    * `date` — `Date`
+    * `type` — `string`
+    * `n` — `number`
+* **Returns:** `{startdate: Date, expireddate: Date}`
+
+#### `function getFormatDateFromLevel(level)`
+
+* Trả về chuỗi định dạng ngày theo cấp độ (`date`, `week`, `month`, `quarter`, `year`).
+* **Parameters:**
+    * `level` — `"date"|"week"|"month"|"quarter"|"year"`
+* **Returns:** `string`
+
+#### `function getDateFormatLevelName(level)`
+
+* Trả về tên hiển thị tiếng Việt của cấp độ thời gian.
+* **Parameters:**
+    * `level` — `"date"|"week"|"month"|"quarter"|"year"`
+* **Returns:** `string`
+
+#### `function getSupportedDateFormatLevels()`
+
+* Trả về danh sách cấp độ định dạng ngày được hỗ trợ.
+* **Returns:** `Array<string>`
+
 ---
 
 ## isDayOffsetInTimeRange24Gmt

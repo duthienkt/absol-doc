@@ -11,6 +11,10 @@ Bước 2: gõ `temp1._azar_extendEvents.nonprioritize` ta sẽ có danh sách t
 
 Bước 3. Ví dụ ở đay ta thấy trong object sự kiện press, muốn biết sự kiện `press`(custom event) có thể log tới `callback` trong `temp1._azar_extendEvents.nonprioritize.press[0].callback` sẽ tìm tới được code callback của dev sử dụng module
 
+### Lỗi listener không nhận
+
+Các sự kiện có thể truyền từ elenent con ra, nếu element con đó bị remove trong quá trình thực hiện event, thì listener ngoài không nhận được, hãy dùng pointer-events: none cho các element thay đổi này, ví dụ như trong FlexiconButton, khi nội dung của nút bị thay đổi trong event blur của 1 input, đã làm mất sự kiện click vào button này
+
 ## Tìm tới code module(trong absol)
 
 Bước 1 tương tự

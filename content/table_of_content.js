@@ -18,6 +18,11 @@ toc = {
             type: 'group',
             href: __dir + '/absol/dom_syntax.md'
         },
+         {
+            name: 'App Pattern',
+            type: 'group',
+            href: __dir + '/absol/app_pattern.md'
+        },
         {
             name: "Debug",
             type: 'group',
