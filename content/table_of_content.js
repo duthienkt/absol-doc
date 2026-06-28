@@ -23,6 +23,11 @@ toc = {
             type: 'group',
             href: __dir + '/absol/app_pattern.md'
         },
+         {
+            name: 'Graphics',
+            type: 'group',
+            href: __dir + '/absol/graphics.md'
+        },
         {
             name: "Debug",
             type: 'group',
