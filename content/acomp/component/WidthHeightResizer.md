@@ -24,7 +24,7 @@ var clazz = absol.require('widthheightresizer');
 
 ### Nguồn
 
-- `js/WidthHeightSizer.js`
+- `js/WidthHeightResizer.js`
 
 ### Demo
 

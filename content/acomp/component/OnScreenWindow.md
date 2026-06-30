@@ -24,7 +24,7 @@ var clazz = absol.require('onscreenwindow');
 
 ### Nguồn
 
-- `js/OnsScreenWindow.js`
+- `js/OnScreenWindow.js`
 
 ### Demo
 
