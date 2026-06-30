@@ -26,7 +26,7 @@ toc = {
          {
             name: 'Math & Graphics',
             type: 'group',
-            href: __dir + '/absol/graphics.md'
+            href: __dir + '/absol/match_graphics.md'
         },
         {
             name: "Debug",
