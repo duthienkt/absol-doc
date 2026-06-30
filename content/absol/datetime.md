@@ -73,6 +73,16 @@ Các token cơ bản:
     * `format` — `String=` —
 * **Returns:** `String` 
 
+#### `function formartDateString(date, format)`
+
+* Hàm tương thích ngược do viết sai chính tả tên (`formart...`).
+* Khi gọi sẽ log cảnh báo: `spelled incorrectly: formartDateString`.
+* Kết quả trả về giống `formatDateString(date, format)`.
+* **Parameters:**
+    * `date` — `Date` —
+    * `format` — `String=` —
+* **Returns:** `String`
+
 #### `function parseDateString(text, format)`
 
 * **Parameters:**
@@ -324,6 +334,14 @@ Các token cơ bản:
     * `format` — `string` —
     * `opt` — `*=` —
 * **Returns:** `string` —
+
+#### `function isDayOffsetInTimeRange24Gmt(range, dayOffset)`
+
+* Kiểm tra `dayOffset` có nằm trong khoảng thời gian 24 giờ hay không (hỗ trợ khoảng qua ngày).
+* **Parameters:**
+    * `range` — `null|{dayOffset?: number, duration?: number}` —
+    * `dayOffset` — `number=` — nếu bỏ qua sẽ lấy thời điểm hiện tại.
+* **Returns:** `boolean` —
 
 #### `function formatTimeRange24(range, opt)`
 

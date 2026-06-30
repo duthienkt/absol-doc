@@ -87,6 +87,41 @@ Kiểm tra một giá trị có thể hiểu là số hay không.
 absol.int.isNumber('123,45', ','); // true
 ```
 
+### `parseExtFloat(text, opt)`
+
+Parse số thực từ chuỗi có thể chứa dấu phân cách hàng nghìn và dấu thập phân tùy biến.
+
+Mặc định:
+
+* `decimalSeparator = '.'`
+* `thousandsSeparator = ','`
+
+Lưu ý:
+
+* Chỉ hỗ trợ dấu `.` và `,` cho phần separator.
+* Ký tự không hợp lệ sẽ bị loại bỏ trước khi parse.
+* Có thể truyền trực tiếp `number` (hàm sẽ trả lại chính số đó).
+
+* `text` | Kiểu: `string | number` | Chuỗi/số đầu vào.
+* `opt` | Kiểu: `object=` | Tùy chọn parse.
+* `opt.thousandsSeparator` | Kiểu: `',' | '.' | ''` | Dấu phân cách hàng nghìn.
+* `opt.decimalSeparator` | Kiểu: `'.' | ','` | Dấu phân cách thập phân.
+* Trả về | Kiểu: `number` | Giá trị đã parse, hoặc `NaN` nếu không parse được.
+
+```js
+absol.int.parseExtFloat('1,234.56');
+// 1234.56
+
+absol.int.parseExtFloat('1.234,56', {
+	thousandsSeparator: '.',
+	decimalSeparator: ','
+});
+// 1234.56
+
+absol.int.parseExtFloat('abc');
+// NaN
+```
+
 ### `numberAutoFixed(x, eDelta)`
 
 Làm tròn số theo độ chính xác thập phân thực dụng để giảm sai số dấu chấm động.
@@ -186,6 +221,203 @@ var s = absol.$.formatLocalFloat(123456.12, 'vi-VN');//=>"123.456,12"
 var s = absol.$.formatLocalFloat(123456.12, {locales:'vi-VN'});//=>"123.456,12"
 var s3 = absol.$.formatLocalFloat(123456.12, 'en-US');//=>"123,456.12"
 var s4 = absol.$.formatLocalFloat(123456.12);//=>"123.456,12" theo config
+```
+
+
+## absol.measurements
+
+Module này cung cấp các hàm đổi đơn vị chiều dài, đổi đơn vị hiển thị in ấn và một số hàm tính toán tọa độ địa lý.
+
+```js
+var m = absol.measurements;
+```
+
+### Đổi đơn vị chiều dài
+
+### `feetToMeter(ft)`
+
+Đổi feet sang mét.
+
+* `ft` | Kiểu: `number` | Giá trị feet.
+* Trả về | Kiểu: `number` | Giá trị mét.
+
+```js
+absol.measurements.feetToMeter(3.28084); // xấp xỉ 1
+```
+
+### `meterToFeet(mt)`
+
+Đổi mét sang feet.
+
+* `mt` | Kiểu: `number` | Giá trị mét.
+* Trả về | Kiểu: `number` | Giá trị feet.
+
+```js
+absol.measurements.meterToFeet(1); // xấp xỉ 3.28084
+```
+
+### `meterToInch(mt)`
+
+Đổi mét sang inch.
+
+* `mt` | Kiểu: `number` | Giá trị mét.
+* Trả về | Kiểu: `number` | Giá trị inch.
+
+```js
+absol.measurements.meterToInch(1); // xấp xỉ 39.3701
+```
+
+### `mileToMeter(ml)`
+
+Đổi mile sang mét.
+
+* `ml` | Kiểu: `number` | Giá trị mile.
+* Trả về | Kiểu: `number` | Giá trị mét.
+
+```js
+absol.measurements.mileToMeter(1); // xấp xỉ 1609.34
+```
+
+### `meterToMile(ml)`
+
+Đổi mét sang mile.
+
+* `ml` | Kiểu: `number` | Giá trị mét.
+* Trả về | Kiểu: `number` | Giá trị mile.
+
+```js
+absol.measurements.meterToMile(1609.34); // xấp xỉ 1
+```
+
+### `meterToYard(mt)`
+
+Đổi mét sang yard.
+
+* `mt` | Kiểu: `number` | Giá trị mét.
+* Trả về | Kiểu: `number` | Giá trị yard.
+
+```js
+absol.measurements.meterToYard(1); // xấp xỉ 1.09361
+```
+
+### `yardToMeter(yd)`
+
+Đổi yard sang mét.
+
+* `yd` | Kiểu: `number` | Giá trị yard.
+* Trả về | Kiểu: `number` | Giá trị mét.
+
+```js
+absol.measurements.yardToMeter(1.09361); // xấp xỉ 1
+```
+
+### Đổi đơn vị dot, point, pixel, centimeter
+
+### `pointToDot(p)`
+
+Đổi point sang dot (theo ngữ cảnh web, dot tương đương pixel).
+
+* `p` | Kiểu: `number` | Giá trị point.
+* Trả về | Kiểu: `number` | Giá trị dot.
+
+```js
+absol.measurements.pointToDot(72); // 54
+```
+
+### `dotToPoint(d)`
+
+Đổi dot sang point.
+
+* `d` | Kiểu: `number` | Giá trị dot.
+* Trả về | Kiểu: `number` | Giá trị point.
+
+```js
+absol.measurements.dotToPoint(96); // 128
+```
+
+### `pxToCentimeter(px)`
+
+Hàm đổi pixel sang centimeter.
+
+* `px` | Kiểu: `number` | Giá trị pixel.
+* Trả về | Kiểu: `number | undefined` | Trong mã hiện tại chưa có phần thân hàm nên trả về `undefined`.
+
+### `centimeterToPx(cm)`
+
+Đổi centimeter sang pixel (theo chuẩn 96 dpi).
+
+* `cm` | Kiểu: `number` | Giá trị centimeter.
+* Trả về | Kiểu: `number` | Giá trị pixel.
+
+```js
+absol.measurements.centimeterToPx(2.54); // xấp xỉ 96
+```
+
+### `chToArial14Px(ch)`
+
+Ước lượng độ rộng ký tự đơn vị ch sang pixel cho font Arial cỡ 14.
+
+* `ch` | Kiểu: `number` | Số đơn vị ch.
+* Trả về | Kiểu: `number` | Pixel ước lượng.
+
+### `chToCalibri11Px(ch)`
+
+Ước lượng độ rộng ký tự đơn vị ch sang pixel cho font Calibri cỡ 11.
+
+* `ch` | Kiểu: `number` | Số đơn vị ch.
+* Trả về | Kiểu: `number` | Pixel ước lượng.
+
+### Kích thước trang chuẩn
+
+### `PAGE_SIZE_IN_DOT`
+
+Bảng kích thước các loại giấy theo đơn vị dot, dạng:
+
+* Khóa: `a4`, `letter`, `legal`, ...
+* Giá trị: `[width, height]`
+
+```js
+absol.measurements.PAGE_SIZE_IN_DOT.a4; // [595.28, 841.89]
+```
+
+### `PAGE_SIZE_IN_POINT`
+
+Bảng kích thước trang theo point, được suy ra từ `PAGE_SIZE_IN_DOT` qua hàm `dotToPoint`.
+
+```js
+absol.measurements.PAGE_SIZE_IN_POINT.a4;
+```
+
+### Hàm liên quan tọa độ địa lý
+
+### `latLngRectFromCenter(center, distance)`
+
+Tạo bounding box theo vĩ độ/kinh độ từ một tâm và bán kính khoảng cách.
+
+* `center` | Kiểu: `{latitude: number, longitude: number}` | Tọa độ tâm.
+* `distance` | Kiểu: `number` | Khoảng cách tính theo km.
+* Trả về | Kiểu: `{ latitude: {min:number, max:number}, longitude: {min:number, max:number} }`
+
+```js
+var rect = absol.measurements.latLngRectFromCenter(
+	{ latitude: 10.7769, longitude: 106.7009 },
+	5
+);
+```
+
+### `latLngDistance(p0, p1)`
+
+Tính khoảng cách giữa hai điểm GPS theo công thức Haversine.
+
+* `p0` | Kiểu: `{latitude: number, longitude: number}`
+* `p1` | Kiểu: `{latitude: number, longitude: number}`
+* Trả về | Kiểu: `number` | Khoảng cách theo km.
+
+```js
+absol.measurements.latLngDistance(
+	{ latitude: 10.7769, longitude: 106.7009 },
+	{ latitude: 21.0278, longitude: 105.8342 }
+); // xấp xỉ 1140 km
 ```
 
 

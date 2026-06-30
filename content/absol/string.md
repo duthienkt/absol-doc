@@ -517,3 +517,83 @@ Lưu ý:
 * Đây là hành vi đúng theo mã nguồn hiện có.
 
 
+## Tiện Ích Chuỗi Khác (stringUtils)
+
+Nhóm hàm này cung cấp hash cho chuỗi/đối tượng và xử lý độ dài theo byte UTF-8.
+
+### `stringHashCode(st)`
+
+Tạo hash 32-bit có dấu từ một chuỗi bằng phép cộng dồn theo mã ký tự.
+
+* `st` | Kiểu: `string` | Chuỗi đầu vào.
+* Trả về | Kiểu: `number` | Giá trị hash 32-bit (có thể âm).
+
+```js
+absol.string.stringHashCode('hello');
+// Ví dụ: 99162322
+```
+
+Lưu ý:
+
+* Đây là hash nhanh để so sánh/xử lý nội bộ, không dùng cho mục đích bảo mật.
+
+### `objectHashCode(obj)`
+
+Tạo hash cho dữ liệu tổng quát (`string`, `number`, `boolean`, `array`, `object`, ...).
+
+Quy tắc chính theo code hiện tại:
+
+* Nếu `obj` có hàm `hash()` thì trả về trực tiếp `obj.hash()`.
+* Với object thường, key được sort trước khi hash để giảm phụ thuộc thứ tự key.
+* Với kiểu primitive, chuyển sang chuỗi rồi hash.
+
+* `obj` | Kiểu: `any` | Dữ liệu cần hash.
+* Trả về | Kiểu: `number` | Giá trị hash.
+
+```js
+absol.string.objectHashCode({ b: 2, a: 1 });
+// Ví dụ: một số nguyên 32-bit
+```
+
+Lưu ý:
+
+* Mục xử lý mảng trong mã hiện tại dùng `Array.isArray(tf)` (với `tf` là chuỗi `typeof`), nên không vào nhánh mảng như kỳ vọng.
+* Tài liệu này mô tả đúng hành vi theo mã nguồn hiện có.
+
+### `getUTF8BytesCount(str)`
+
+Đếm số byte cần thiết để biểu diễn chuỗi theo UTF-8.
+
+* `str` | Kiểu: `string` | Chuỗi đầu vào.
+* Trả về | Kiểu: `number` | Số byte UTF-8.
+
+```js
+absol.string.getUTF8BytesCount('abc'); // 3
+absol.string.getUTF8BytesCount('Việt'); // 6
+absol.string.getUTF8BytesCount('😀'); // 4
+```
+
+### `cropTextByUTF8BytesCount(str, maxBytes)`
+
+Cắt chuỗi để tổng số byte UTF-8 không vượt quá giới hạn cho trước.
+
+Hàm đảm bảo không cắt vỡ ký tự nhiều byte giữa chừng.
+
+* `str` | Kiểu: `string` | Chuỗi đầu vào.
+* `maxBytes` | Kiểu: `number` | Giới hạn byte UTF-8.
+* Trả về | Kiểu: `string` | Chuỗi đã cắt.
+
+```js
+absol.string.cropTextByUTF8BytesCount('Xin chào Việt Nam', 10);
+// Ví dụ: 'Xin chào '
+```
+
+### `crc16(str)` (nội bộ)
+
+Trong file có hàm `crc16` để tính CRC-16, nhưng hàm này không được `export`.
+
+Vì vậy:
+
+* Không thể gọi trực tiếp qua `absol.string.crc16` trong API public hiện tại.
+
+

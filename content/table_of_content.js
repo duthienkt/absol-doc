@@ -24,7 +24,7 @@ toc = {
             href: __dir + '/absol/app_pattern.md'
         },
          {
-            name: 'Graphics',
+            name: 'Math & Graphics',
             type: 'group',
             href: __dir + '/absol/graphics.md'
         },
