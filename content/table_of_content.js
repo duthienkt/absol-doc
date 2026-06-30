@@ -54,6 +54,11 @@ toc = {
             href: __dir + '/absol/data_structure.md'
         },
         {
+            name: 'String',
+            type: 'group',
+            href: __dir + '/absol/string.md'
+        },
+        {
             name: 'datetime',
             type: 'group',
             href: __dir + '/absol/datetime.md'
