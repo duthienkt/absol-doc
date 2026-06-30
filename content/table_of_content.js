@@ -101,7 +101,7 @@ var acompNames = Object.keys(absol.AComp.core.creator).map(key => {
 
 }).filter(x => !!x)
 
-acompNames.push('Text', 'ObsDiv');
+acompNames.push('Text', 'ObsDiv', "CMDTool");
 
 
 acompNames.sort();
