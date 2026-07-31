@@ -86,6 +86,16 @@ Chặn thao tác paste HTML vào phần tử `contenteditable`, chỉ giữ lạ
 * Trả về: `void`.
 * Ghi chú: Hàm có tính idempotent, gọi lặp lại sẽ không gắn listener trùng.
 
+### `getClipboardPlainText(e)`
+
+Lấy plain text từ clipboard event hiện tại, có fallback cho API clipboard kiểu cũ.
+
+* Truy cập: `absol.$.getClipboardPlainText`
+* Tham số:
+	* `e?: ClipboardEvent` Event paste/copy (nếu có).
+* Trả về: `string`.
+* Ghi chú: Nếu không đọc được dữ liệu thì trả về chuỗi rỗng `""`.
+
 ### `preventNotNumberInput(elt)`
 
 Giới hạn input chỉ cho phép nhập số, dấu `+`, `-` và dấu thập phân.
@@ -215,6 +225,16 @@ Dựng thẻ `<style>` từ object khai báo CSS và gắn vào `document.head`.
 	* `StyleSheet: object` Object dạng `{ selector: { property: value } }`.
 * Trả về: `HTMLElement` là thẻ `style` vừa tạo.
 
+### `replaceChUnitInStyleValue(value)`
+
+Thay mọi giá trị CSS dạng `ch` trong chuỗi style sang `px` theo chuẩn đo font Arial `14px`.
+
+* Truy cập: `absol.$.replaceChUnitInStyleValue`
+* Tham số:
+	* `value: string`
+* Trả về: `string`.
+* Ghi chú: Nếu `value` không phải chuỗi, hàm trả lại nguyên giá trị đầu vào.
+
 ### `forwardEvent(elt, fromName, toName)`
 
 Lắng nghe một event và phát lại nó dưới tên khác.
@@ -261,6 +281,25 @@ Hiển thị dialog xác nhận Yes/No.
 	* `message: string`
 * Trả về: `Promise<boolean>`.
 * Ghi chú: Nếu có `window.ModalElement.question` thì dùng API sẵn có, nếu không sẽ dựng `Modal` riêng.
+
+
+## Clipboard và bảng HTML
+
+### `readClipboardHTML()`
+
+Đọc nội dung clipboard ưu tiên định dạng `text/html`, fallback sang `readText` nếu cần.
+
+* Truy cập: `absol.$.readClipboardHTML`
+* Trả về: `Promise<string>`.
+* Ghi chú: Có thể `reject` khi trình duyệt không hỗ trợ Clipboard API hoặc không có quyền đọc.
+
+### `parseAllTableInClipboard()`
+
+Đọc clipboard, tìm toàn bộ thẻ `table` và parse về dữ liệu hàng/cột.
+
+* Truy cập: `absol.$.parseAllTableInClipboard`
+* Trả về: `Promise<Array<{head: Array<Array<{text: string, html: string, colspan: number, rowspan: number}>>, body: Array<Array<{text: string, html: string, colspan: number, rowspan: number}>>}>>`.
+* Ghi chú: Nếu lỗi đọc clipboard thì hàm bắt lỗi và trả về mảng rỗng `[]`.
 
 
 ## File và tên file
@@ -603,6 +642,26 @@ Thêm một hoặc nhiều CSS class vào element.
 	* `elt: HTMLElement`
 * Trả về: `HTMLElement`.
 
+### `getBoundingContentRect(elt)`
+
+Lấy hình chữ nhật vùng content của element theo hệ tọa độ viewport (không gồm border và padding).
+
+* Truy cập: `absol.$.getBoundingContentRect`
+* Tham số:
+	* `elt: AElement | HTMLElement`
+* Trả về: `Rectangle`.
+* Ghi chú: Nếu `elt` không hợp lệ thì trả về `Rectangle(0, 0, 0, 0)`.
+
+### `getBoundingPaddingRect(elt)`
+
+Lấy hình chữ nhật vùng padding box của element theo hệ tọa độ viewport (không gồm border).
+
+* Truy cập: `absol.$.getBoundingPaddingRect`
+* Tham số:
+	* `elt: AElement | HTMLElement`
+* Trả về: `Rectangle`.
+* Ghi chú: Nếu `elt` không hợp lệ thì trả về `Rectangle(0, 0, 0, 0)`.
+
 ### `isScrolledToBottom(element, padding)`
 
 Kiểm tra một vùng cuộn đã chạm đáy hay chưa.
@@ -813,6 +872,17 @@ Chuẩn hóa nhiều định dạng tọa độ về chuỗi `lat,lng`.
 	* `text: string`
 * Trả về: `string`.
 * Ghi chú: Trả về chuỗi rỗng nếu parse thất bại.
+
+### `FallbackLatLng(latitude, longitude)`
+
+Constructor fallback cho `LatLng` khi `google.maps.LatLng` chưa sẵn sàng.
+
+* Truy cập: `absol.$.FallbackLatLng`
+* Tham số:
+	* `latitude: number`
+	* `longitude: number`
+* Trả về: `FallbackLatLng` với các method `lat()`, `lng()`, `toJSON()`, `toString()`.
+* Ghi chú: Được `implicitLatLng` dùng nội bộ để giữ API tương thích khi thiếu Google Maps runtime.
 
 ### `implicitLatLng(value)`
 
