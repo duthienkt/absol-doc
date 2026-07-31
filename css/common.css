@@ -23,8 +23,13 @@ html, body {
     top: 0;
     height: 100%;
     border-right: 1px solid #ddd;
-    overflow-y: auto;
     box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.main-left .as-exp-group {
+    overflow: auto;
 }
 
 .main-right {

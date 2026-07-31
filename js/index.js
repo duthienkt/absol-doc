@@ -55,7 +55,13 @@ var tocList = require('../content/table_of_content.js')
 
 var tocElt = _({
     tag: 'expgroup',
+    class:'as-bscroller',
 });
+
+var searchInput = _({
+    tag:'searchtextinput',
+});
+
 
 
 var type2icon = {
@@ -200,7 +206,7 @@ var contentElt = _('.main-content.markdown-body');
 var mainElt = render({
     class: 'main',
     child: [
-        { class: ['main-left', 'as-bscroller'], child: tocElt },
+        { class: ['main-left'], child: [searchInput ,tocElt] },
         { class: 'main-right', child: contentElt }
     ]
 });
@@ -210,3 +216,4 @@ mainElt.addStyle('--toc-width', tocElt.getBoundingClientRect().width + 'px')
 
 /*********************************************************************************/
 
+var searcher = new absol.ExpSearcher(tocElt, { inputElt: searchInput });
