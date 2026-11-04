@@ -699,4 +699,108 @@ view.attributes.setProperty("title", "  New title  ");
 console.log(view.attributes.getProperty("title")); // "New title"
 ```
 
+## class Mutex
 
+`Mutex` là primitive đồng bộ hóa để thực thi tuần tự các tác vụ trong một critical section. Tác vụ được đưa vào theo thứ tự FIFO: nếu mutex đang được giữ, tác vụ mới sẽ chờ đến lượt.
+
+### Import
+
+```js
+import Mutex from "absol/src/AppPattern/Mutex";
+```
+
+### Constructor
+
+#### `new Mutex()`
+
+Tạo mutex ở trạng thái chưa bị khóa, với hàng đợi tác vụ chờ rỗng. Constructor không nhận tham số.
+
+### Properties
+
+- **locked**: `boolean` — cho biết mutex đang được giữ hay không.
+- **waitingCount**: `number` — số tác vụ hiện đang chờ trong hàng đợi.
+
+### Methods
+
+#### `lock(callback, thisArg, args): Mutex`
+
+Đưa callback vào mutex. Nếu mutex đang rảnh, callback được gọi ngay; nếu mutex đang bị giữ, callback được xếp hàng và chạy sau khi các tác vụ trước đó nhả khóa.
+
+- **callback**: `function(unlock, ...args)` — hàm nhận `unlock` làm tham số đầu tiên, sau đó là các giá trị trong `args`.
+- **thisArg**: `*=` giá trị `this` của callback; nếu bỏ qua hoặc là `undefined`, `this` là đối tượng `Mutex`.
+- **args**: `Array=` các tham số truyền vào callback sau `unlock`; mảng được sao chép khi gọi `lock`.
+- **Returns**: `Mutex`
+- **Throws**: `TypeError` nếu `callback` không phải hàm.
+
+Với callback đồng bộ, cần gọi `unlock()` khi hoàn tất để cho phép tác vụ kế tiếp chạy. Nếu callback trả về Promise hoặc thenable, mutex tự nhả khóa khi Promise/thenable hoàn tất hoặc bị reject; không cần gọi `unlock()` thêm.
+
+#### `acquire(): Promise<function(): void>`
+
+Chờ đến khi lấy được khóa và resolve với hàm `unlock`. Gọi hàm này để nhả khóa. Nên dùng `try/finally` để bảo đảm khóa được nhả kể cả khi phần công việc phát sinh lỗi.
+
+#### `clear(): Mutex`
+
+Xóa tất cả tác vụ đang chờ mà không ngắt tác vụ đang giữ khóa. Các Promise được tạo bởi `acquire()` đang chờ sẽ bị reject với lỗi `Mutex queue was cleared`.
+
+- **Returns**: `Mutex`
+
+#### `isLocked(): boolean`
+
+Trả về `true` nếu mutex đang bị giữ, ngược lại trả về `false`.
+
+#### `unlock(): Mutex`
+
+Nhả khóa hiện tại nếu có và cho phép tác vụ chờ tiếp theo chạy. Đây là phương thức công khai, nên lời gọi trực tiếp có thể nhả khóa của tác vụ khác; thông thường hãy dùng hàm `unlock` được truyền vào callback hoặc được trả về từ `acquire()`.
+
+- **Returns**: `Mutex`
+
+#### `release(): Mutex`
+
+Alias của `unlock()`.
+
+### Notes
+
+- Các tác vụ chờ được xử lý theo thứ tự FIFO. Việc chuyển sang tác vụ kế tiếp được lên lịch qua microtask.
+- Hàm `unlock` cấp cho từng tác vụ gắn với quyền sở hữu tác vụ đó. Gọi lặp lại hoặc gọi hàm `unlock` cũ sau khi quyền sở hữu đã chuyển sẽ không nhả khóa của tác vụ mới.
+- Nếu callback ném lỗi hoặc Promise/thenable bị reject, mutex vẫn được nhả để hàng đợi tiếp tục; lỗi được ném lại bất đồng bộ, không bị bỏ qua.
+- `clear()` chỉ ảnh hưởng các tác vụ đang chờ, không ảnh hưởng tác vụ hiện tại.
+
+### Simple example
+
+```js
+import Mutex from "absol/src/AppPattern/Mutex";
+
+var mutex = new Mutex();
+
+mutex.lock(function (unlock, name) {
+    console.log("start:", name);
+    setTimeout(function () {
+        console.log("finish:", name);
+        unlock();
+    }, 100);
+}, undefined, ["first"]);
+
+mutex.lock(function (unlock, name) {
+    console.log("start:", name); // chạy sau khi tác vụ first gọi unlock()
+    unlock();
+}, undefined, ["second"]);
+```
+
+### Promise-based example
+
+```js
+import Mutex from "absol/src/AppPattern/Mutex";
+
+var mutex = new Mutex();
+
+async function updateSharedResource() {
+    var unlock = await mutex.acquire();
+    try {
+        console.log("updating shared resource");
+        await Promise.resolve();
+    }
+    finally {
+        unlock();
+    }
+}
+```
